@@ -126,7 +126,7 @@ class ConfigContainer
     /**
      * @param $path
      *
-     * @return array|false
+     * @return string|false
      */
     private function loadConfig($path)
     {
