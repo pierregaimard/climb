@@ -2,12 +2,19 @@
 
 namespace Framework3\Env;
 
+use Framework3\FileReader\FileReader;
+
 class EnvContainer
 {
     /**
      * @var EnvManager
      */
     private EnvManager $envManager;
+
+    /**
+     * @var FileReader
+     */
+    private FileReader $fileReader;
 
     /**
      * @var EnvBag|null
@@ -17,6 +24,7 @@ class EnvContainer
     public function __construct()
     {
         $this->envManager = new EnvManager();
+        $this->fileReader = new FileReader();
     }
 
     /**
@@ -38,17 +46,17 @@ class EnvContainer
     private function loadEnv(): ?array
     {
         // Composer Package mode
-        if (file_exists($this->envManager->getFilePath(__DIR__ . '/../../../../../'))) {
-            return $this->envManager->getEnvData(__DIR__ . '/../../../../../');
+        $modePackageDir = __DIR__ . '/../../../../../';
+        if ($this->fileReader->hasFile($this->envManager->getFilePath($modePackageDir))) {
+            return $this->envManager->getEnvData($modePackageDir);
         }
 
         // Dev mode
-        $path = $this->envManager->getFilePath(__DIR__ . '/../../');
-
-        if (!file_exists($path)) {
+        $modeDevDir = __DIR__ . '/../../';
+        if (!$this->fileReader->hasFile($this->envManager->getFilePath($modeDevDir))) {
             return $this->envManager->getEnvData();
         }
 
-        return $this->envManager->getEnvData(__DIR__ . '/../../');
+        return $this->envManager->getEnvData($modeDevDir);
     }
 }
