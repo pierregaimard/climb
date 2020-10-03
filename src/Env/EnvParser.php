@@ -2,7 +2,7 @@
 
 namespace Framework3\Env;
 
-use RuntimeException;
+use Framework3\Exception\AppException;
 
 class EnvParser
 {
@@ -63,7 +63,7 @@ class EnvParser
      *
      * @return array
      *
-     * @throws RuntimeException
+     * @throws AppException
      */
     private function parseLine(string $line): array
     {
@@ -74,11 +74,10 @@ class EnvParser
         );
 
         if (empty($matches)) {
-            throw new RuntimeException(
-                sprintf(
-                    '.env Parser error: Illegal variable declaration in env file: "%s"',
-                    $line
-                )
+            throw new AppException(
+                AppException::TYPE_ENV_PARSER,
+                'Illegal variable declaration in env file',
+                sprintf('Declaration: "%s"', $line)
             );
         }
 
@@ -87,11 +86,10 @@ class EnvParser
 
         if ($value && substr($value, 0, 1) === '"') {
             if (substr($value, -1, 1) !== '"') {
-                throw new RuntimeException(
-                    sprintf(
-                        ".env Parser error: Double quote is missing at the end in env file: '%s'",
-                        $line
-                    )
+                throw new AppException(
+                    AppException::TYPE_ENV_PARSER,
+                    'Double quote is missing at the end',
+                    sprintf('Declaration: "%s"', $line)
                 );
             }
 

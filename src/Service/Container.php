@@ -12,7 +12,6 @@ use Framework3\Env\EnvBag;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;
-use Exception;
 
 class Container implements ContainerInterface
 {
@@ -56,7 +55,7 @@ class Container implements ContainerInterface
     private ConfigBag $servicesConfig;
 
     /**
-     * @throws Exception
+     * @throws AppException
      */
     public function __construct()
     {
@@ -216,7 +215,7 @@ class Container implements ContainerInterface
     }
 
     /**
-     * @throws Exception
+     * @throws AppException
      */
     private function setConfigContainer(): void
     {
@@ -235,7 +234,7 @@ class Container implements ContainerInterface
      *
      * @return ConfigBag
      *
-     * @throws Exception
+     * @throws AppException
      */
     public function getConfig(string $path, $required = true): ConfigBag
     {
