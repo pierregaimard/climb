@@ -16,6 +16,8 @@ class AppException extends Exception
     public const TYPE_CONTROLLER = 8;
     public const TYPE_SECURITY = 9;
     public const TYPE_NOT_FOUND = 10;
+    public const TYPE_ENV = 11;
+    public const TYPE_ENV_PARSER = 12;
 
     /**
      * Exceptions titles
@@ -30,7 +32,9 @@ class AppException extends Exception
         7 =>  'RouterException',
         8 =>  'ControllerException',
         9 =>  'SecurityException',
-        10 => 'NotFoundException'
+        10 => 'NotFoundException',
+        11 => 'EnvFileException',
+        12 => 'EnvParserException',
     ];
 
     /**
@@ -128,7 +132,7 @@ class AppException extends Exception
             "<br />" .
             "LINE: " . $this->getLine() .
             "<br />" .
-            "TRACE: " . $this->getTraceAsString() .
+            "TRACE: " . nl2br($this->getTraceAsString()) .
             "<hr />"
         ;
     }
