@@ -117,9 +117,7 @@ class AppException extends Exception
 
         return
             "<hr />" .
-            "<strong>" . $this->getType() . "</strong>" .
-            "<hr />" .
-            "<strong>" . $this->getType() . "</strong>" .
+            "<strong>" . self::TYPES[$this->getType()] . "</strong>" .
             "<hr />" .
             "CODE: " . $this->getCode() .
             "<br />" .
