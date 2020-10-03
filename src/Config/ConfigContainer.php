@@ -2,8 +2,8 @@
 
 namespace Framework3\Config;
 
+use Framework3\Exception\AppException;
 use Framework3\FileReader\FileReader;
-use Exception;
 
 class ConfigContainer
 {
@@ -42,7 +42,7 @@ class ConfigContainer
      * @param string     $appConfigDir
      * @param string     $appConfigFileType
      *
-     * @throws Exception
+     * @throws AppException
      */
     public function __construct(FileReader $fileReader, string $appConfigDir, string $appConfigFileType)
     {
@@ -57,7 +57,7 @@ class ConfigContainer
      *
      * @return ConfigBag|false
      *
-     * @throws Exception
+     * @throws AppException
      */
     public function getConfig(string $path, bool $required = false)
     {
@@ -70,11 +70,10 @@ class ConfigContainer
 
         if (!$frameworkConfigFile && !$appConfigFile) {
             if ($required) {
-                throw new Exception(
-                    sprintf(
-                        'Config file exception. Required config file is missing for path "%s"',
-                        $path
-                    )
+                throw new AppException(
+                    AppException::TYPE_CONFIG,
+                    'Required config file is missing',
+                    sprintf('Required path: %s', $path)
                 );
             }
 
@@ -162,17 +161,15 @@ class ConfigContainer
     /**
      * @param string $appConfigFileType
      *
-     * @throws Exception
+     * @throws AppException
      */
     private function setAppConfigFileType(string $appConfigFileType): void
     {
         if (in_array($appConfigFileType, self::TYPES_EXT)) {
-            throw new Exception(
-                sprintf(
-                    'Config file Exception. Invalid config file type declaration: "%s".' .
-                    ' See "CONFIG_FILE_TYPE" parameter in .env file',
-                    $appConfigFileType
-                )
+            throw new AppException(
+                AppException::TYPE_ENV,
+                sprintf('Invalid config file type declaration: "%s"', $appConfigFileType),
+                'See "CONFIG_FILE_TYPE" parameter in .env file'
             );
         }
 
