@@ -2,14 +2,16 @@
 
 namespace Framework3\Env;
 
+use Framework3\FileReader\FileReader;
+
 class EnvManager
 {
     private const DEFAULT_NAME = 'env';
 
     /**
-     * @var EnvFileReader
+     * @var FileReader
      */
-    protected EnvFileReader $fileReader;
+    protected FileReader $fileReader;
 
     /**
      * @var EnvParser
@@ -18,7 +20,7 @@ class EnvManager
 
     public function __construct()
     {
-        $this->fileReader = new EnvFileReader();
+        $this->fileReader = new FileReader();
         $referenceParser = new EnvReferenceParser();
         $this->parser = new EnvParser($referenceParser);
     }
@@ -39,7 +41,8 @@ class EnvManager
 
         if ($fileDir !== null) {
             $file = $this->fileReader->getFile(
-                $this->getFilePath($fileDir, $fileName)
+                $this->getFilePath($fileDir, $fileName),
+                FileReader::TYPE_ENV
             );
 
             $customEnvData = $this->parser->getParsedData($file);
