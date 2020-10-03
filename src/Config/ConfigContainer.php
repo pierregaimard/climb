@@ -83,12 +83,14 @@ class ConfigContainer
 
         if (!$frameworkConfigFile) {
             $this->container[$path] = new ConfigBag(
+                $path,
                 $this->getArrayData($appConfigFile, $this->appConfigFileType)
             );
         }
 
         if (!$appConfigFile) {
             $this->container[$path] = new ConfigBag(
+                $path,
                 $this->getArrayData($frameworkConfigFile, self::TYPE_JSON)
             );
         }
@@ -99,7 +101,7 @@ class ConfigContainer
                 $this->getArrayData($frameworkConfigFile, self::TYPE_JSON)
             );
 
-            $this->container[$path] = new ConfigBag($data);
+            $this->container[$path] = new ConfigBag($path, $data);
         }
 
         return $this->container[$path];

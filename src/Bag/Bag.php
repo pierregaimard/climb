@@ -18,7 +18,7 @@ class Bag implements IteratorAggregate
      *
      * @var array $bag
      */
-    private array $bag = [];
+    protected array $bag = [];
 
     /**
      * Bag constructor.

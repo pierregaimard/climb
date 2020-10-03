@@ -18,9 +18,9 @@ class EnvManager
      */
     private EnvParser $parser;
 
-    public function __construct()
+    public function __construct(FileReader $fileReader)
     {
-        $this->fileReader = new FileReader();
+        $this->fileReader = $fileReader;
         $referenceParser = new EnvReferenceParser();
         $this->parser = new EnvParser($referenceParser);
     }

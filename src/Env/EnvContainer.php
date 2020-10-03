@@ -21,10 +21,10 @@ class EnvContainer
      */
     private ?EnvBag $env = null;
 
-    public function __construct()
+    public function __construct(FileReader $fileReader)
     {
-        $this->envManager = new EnvManager();
-        $this->fileReader = new FileReader();
+        $this->envManager = new EnvManager($fileReader);
+        $this->fileReader = $fileReader;
     }
 
     /**
