@@ -1,11 +1,11 @@
 <?php
 
-namespace Framework3\FileReader;
+namespace Framework3\Filesystem;
 
 class FileReader
 {
-    public const TYPE_ENV = 1;
-    public const TYPE_CONFIG = 2;
+    public const TYPE_ARRAY = 1;
+    public const TYPE_STRING = 2;
 
     /**
      * @param string $path
@@ -13,14 +13,14 @@ class FileReader
      *
      * @return array|false
      */
-    public function getFile(string $path, int $type)
+    public function getContent(string $path, int $type)
     {
         switch ($type) {
-            case self::TYPE_ENV:
-                return $this->getEnvFile($path);
+            case self::TYPE_ARRAY:
+                return $this->getContentAsArray($path);
 
-            case self::TYPE_CONFIG:
-                return $this->getConfigFile($path);
+            case self::TYPE_STRING:
+                return $this->getContentAsString($path);
 
             default:
                 return false;
@@ -32,7 +32,7 @@ class FileReader
      *
      * @return bool
      */
-    public function hasFile($path)
+    public function has($path)
     {
         return file_exists($path);
     }
@@ -42,7 +42,7 @@ class FileReader
      *
      * @return array|false
      */
-    private function getEnvFile(string $path)
+    private function getContentAsArray(string $path)
     {
         return file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     }
@@ -52,7 +52,7 @@ class FileReader
      *
      * @return string|false
      */
-    private function getConfigFile(string $path)
+    private function getContentAsString(string $path)
     {
         return file_get_contents($path);
     }
