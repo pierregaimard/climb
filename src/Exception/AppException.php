@@ -6,18 +6,18 @@ use Exception;
 
 class AppException extends Exception
 {
-    public const TYPE_APP_EXCEPTION_TYPE = 1;
-    public const TYPE_CONFIG = 2;
-    public const TYPE_ANNOTATION_REFLECTION_CLASS = 3;
-    public const TYPE_ANNOTATION_PARSER = 4;
+    public const TYPE_APP_EXCEPTION_TYPE           = 1;
+    public const TYPE_CONFIG                       = 2;
+    public const TYPE_ANNOTATION_REFLECTION_CLASS  = 3;
+    public const TYPE_ANNOTATION_PARSER            = 4;
     public const TYPE_ANNOTATION_MANAGER_EXCEPTION = 5;
-    public const TYPE_CLASS_FINDER = 6;
-    public const TYPE_ROUTER = 7;
-    public const TYPE_CONTROLLER = 8;
-    public const TYPE_SECURITY = 9;
-    public const TYPE_NOT_FOUND = 10;
-    public const TYPE_ENV = 11;
-    public const TYPE_ENV_PARSER = 12;
+    public const TYPE_CLASS_FINDER                 = 6;
+    public const TYPE_ROUTER                       = 7;
+    public const TYPE_CONTROLLER                   = 8;
+    public const TYPE_SECURITY                     = 9;
+    public const TYPE_NOT_FOUND                    = 10;
+    public const TYPE_ENV                          = 11;
+    public const TYPE_ENV_PARSER                   = 12;
 
     /**
      * Exceptions titles
@@ -53,14 +53,12 @@ class AppException extends Exception
     private ?string $messageDetail;
 
     /**
-     * AppException constructor.
-     *
-     * @param string $type
-     * @param string $message
+     * @param string      $type
+     * @param string      $message
      * @param string|null $messageDetail
-     * @param int $code
+     * @param int         $code
      *
-     * @throws Exception
+     * @throws AppException
      */
     public function __construct(
         string $type,
