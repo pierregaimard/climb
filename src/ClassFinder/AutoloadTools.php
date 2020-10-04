@@ -27,7 +27,7 @@ class AutoloadTools
      */
     public function __construct(FileReader $reader, string $baseDir)
     {
-        $this->reader = $reader;
+        $this->reader  = $reader;
         $this->baseDir = $baseDir;
     }
 
