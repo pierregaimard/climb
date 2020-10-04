@@ -21,8 +21,8 @@ class EnvManager
     public function __construct(FileReader $fileReader)
     {
         $this->fileReader = $fileReader;
-        $referenceParser = new EnvReferenceParser();
-        $this->parser = new EnvParser($referenceParser);
+        $referenceParser  = new EnvReferenceParser();
+        $this->parser     = new EnvParser($referenceParser);
     }
 
     /**
@@ -66,6 +66,7 @@ class EnvManager
     public function getFilePath(string $fileDir, string $fileName = null): string
     {
         $fileName = ($fileName) ? $fileName : self::DEFAULT_NAME;
+
         return $fileDir . "." . $fileName;
     }
 

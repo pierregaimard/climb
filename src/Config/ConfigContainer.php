@@ -46,7 +46,7 @@ class ConfigContainer
      */
     public function __construct(FileReader $fileReader, string $appConfigDir, string $appConfigFileType)
     {
-        $this->fileReader = $fileReader;
+        $this->fileReader   = $fileReader;
         $this->appConfigDir = $appConfigDir;
         $this->setAppConfigFileType($appConfigFileType);
     }
@@ -66,7 +66,7 @@ class ConfigContainer
         }
 
         $frameworkConfigFile = $this->loadConfig($this->getFrameworkConfigPath($path));
-        $appConfigFile = $this->loadConfig($this->getAppConfigPath($path));
+        $appConfigFile       = $this->loadConfig($this->getAppConfigPath($path));
 
         if (!$frameworkConfigFile && !$appConfigFile) {
             if ($required) {

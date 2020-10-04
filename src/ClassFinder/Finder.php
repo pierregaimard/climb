@@ -35,8 +35,8 @@ class Finder implements FinderInterface
     public function __construct(AutoloadTools $autoloadTools, Scanner $scanner, string $baseDir)
     {
         $this->autoloadTools = $autoloadTools;
-        $this->scanner = $scanner;
-        $this->baseDir = $baseDir;
+        $this->scanner       = $scanner;
+        $this->baseDir       = $baseDir;
     }
 
     /**

@@ -96,7 +96,7 @@ class Container implements ContainerInterface
         }
 
         if (isset($serviceConfig)) {
-            $arguments = $this->getServiceArguments($serviceConfig[self::SERVICE_ARGUMENT_KEY]);
+            $arguments             = $this->getServiceArguments($serviceConfig[self::SERVICE_ARGUMENT_KEY]);
             $this->container[$key] = new $key(...$arguments);
 
             return $this->container[$key];

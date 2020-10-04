@@ -37,8 +37,8 @@ class Scanner
      */
     public function scan(string $baseDir, string $subDir = null, $scanSubDirs = true): ?array
     {
-        $dir = ($subDir) ? $baseDir . DIRECTORY_SEPARATOR . $subDir : $baseDir;
-        $list = array_diff($this->dirReader->scan($dir), ['.', '..']);
+        $dir       = ($subDir) ? $baseDir . DIRECTORY_SEPARATOR . $subDir : $baseDir;
+        $list      = array_diff($this->dirReader->scan($dir), ['.', '..']);
         $classList = [];
 
         foreach ($list as $item) {
@@ -47,7 +47,7 @@ class Scanner
                     continue;
                 }
 
-                $childSubDir = ($subDir) ? $subDir . DIRECTORY_SEPARATOR . $item : $item;
+                $childSubDir  = ($subDir) ? $subDir . DIRECTORY_SEPARATOR . $item : $item;
                 $subClassList = $this->scan($baseDir, $childSubDir);
 
                 continue;
