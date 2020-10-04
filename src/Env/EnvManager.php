@@ -2,7 +2,7 @@
 
 namespace Framework3\Env;
 
-use Framework3\FileReader\FileReader;
+use Framework3\Filesystem\FileReader;
 
 class EnvManager
 {
@@ -40,9 +40,9 @@ class EnvManager
         $globalEnvData = $this->getGlobalEnv();
 
         if ($fileDir !== null) {
-            $file = $this->fileReader->getFile(
+            $file = $this->fileReader->getContent(
                 $this->getFilePath($fileDir, $fileName),
-                FileReader::TYPE_ENV
+                FileReader::TYPE_ARRAY
             );
 
             $customEnvData = $this->parser->getParsedData($file);
