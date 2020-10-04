@@ -1,0 +1,15 @@
+{
+  "Framework3\\ClassFinder\\AutoloadConfig": {
+    "argument": [
+      "@Framework3\\Filesystem\\FileReader",
+      "$env(BASE_DIR)"
+    ]
+  },
+  "Framework3\\ClassFinder\\Finder": {
+    "argument": [
+      "@Framework3\\ClassFinder\\AutoloadConfig",
+      "@Framework3\\Filesystem\\DirectoryReader",
+      "$env(BASE_DIR)"
+    ]
+  }
+}
