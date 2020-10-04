@@ -81,7 +81,7 @@ class EnvParser
             );
         }
 
-        $key = trim($matches[1]);
+        $key   = trim($matches[1]);
         $value = ($matches[3] !== "") ? $matches[3] : null;
 
         if ($value && substr($value, 0, 1) === '"') {
