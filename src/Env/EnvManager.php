@@ -66,7 +66,7 @@ class EnvManager
     public function getFilePath(string $fileDir, string $fileName = null): string
     {
         $fileName = ($fileName) ? $fileName : self::DEFAULT_NAME;
-        
+
         return $fileDir . "." . $fileName;
     }
 
