@@ -36,7 +36,7 @@ class AutoloadTools
      */
     public function getPsr4Config(): ?array
     {
-        $path = $this->baseDir . DIRECTORY_SEPARATOR . 'composer.json';
+        $path         = $this->baseDir . DIRECTORY_SEPARATOR . 'composer.json';
         $composerData = json_decode(
             $this->reader->getContent($path, FileReader::TYPE_STRING),
             true
