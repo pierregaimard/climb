@@ -11,7 +11,7 @@ class DirectoryReader
      */
     public function scan(string $dir)
     {
-        if (!is_dir($dir)) {
+        if ($this->isDir($dir)) {
             return false;
         }
 
