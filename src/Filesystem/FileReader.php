@@ -4,7 +4,7 @@ namespace Framework3\Filesystem;
 
 class FileReader
 {
-    public const TYPE_ARRAY = 1;
+    public const TYPE_ARRAY  = 1;
     public const TYPE_STRING = 2;
 
     /**
