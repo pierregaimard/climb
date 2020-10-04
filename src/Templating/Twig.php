@@ -66,7 +66,7 @@ class Twig
         ];
 
         foreach ($this->config->get('TEMPLATE_DIR', true) as $namespace) {
-            $dir = $this->autoloadTools->getDirPathFromNamespace($namespace);
+            $dir    = $this->autoloadTools->getDirPathFromNamespace($namespace);
             $dirs[] = $this->baseDir . DIRECTORY_SEPARATOR . $dir;
         }
 
