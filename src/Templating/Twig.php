@@ -38,8 +38,8 @@ class Twig
     public function __construct(AutoloadTools $autoloadTools, ConfigBag $config, string $baseDir)
     {
         $this->autoloadTools = $autoloadTools;
-        $this->config = $config;
-        $this->baseDir = $baseDir;
+        $this->config        = $config;
+        $this->baseDir       = $baseDir;
     }
 
     /**
