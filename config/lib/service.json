@@ -16,5 +16,12 @@
       "@Framework3\\ClassFinder\\Scanner",
       "$env(BASE_DIR)"
     ]
+  },
+  "Framework3\\Templating\\Twig": {
+    "argument": [
+      "@Framework3\\ClassFinder\\AutoloadTools",
+      "{lib/twig}",
+      "$env(BASE_DIR)"
+    ]
   }
 }

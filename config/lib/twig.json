@@ -1,0 +1,9 @@
+{
+  "TEMPLATE_DIR": [
+    "Test\\Vue"
+  ],
+  "OPTIONS": {
+    "cache": false,
+    "debug": true
+  }
+}
