@@ -2,7 +2,7 @@
 
 namespace Framework3\Env;
 
-use Framework3\FileReader\FileReader;
+use Framework3\Filesystem\FileReader;
 
 class EnvContainer
 {
@@ -47,13 +47,13 @@ class EnvContainer
     {
         // Composer Package mode
         $modePackageDir = __DIR__ . '/../../../../../';
-        if ($this->fileReader->hasFile($this->envManager->getFilePath($modePackageDir))) {
+        if ($this->fileReader->has($this->envManager->getFilePath($modePackageDir))) {
             return $this->envManager->getEnvData($modePackageDir);
         }
 
         // Dev mode
         $modeDevDir = __DIR__ . '/../../';
-        if (!$this->fileReader->hasFile($this->envManager->getFilePath($modeDevDir))) {
+        if (!$this->fileReader->has($this->envManager->getFilePath($modeDevDir))) {
             return $this->envManager->getEnvData();
         }
 

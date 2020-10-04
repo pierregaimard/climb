@@ -7,7 +7,7 @@ use Framework3\Config\ConfigContainer;
 use Framework3\Env\EnvContainer;
 use Framework3\Exception\AppException;
 use Framework3\Exception\AppNotFoundException;
-use Framework3\FileReader\FileReader;
+use Framework3\Filesystem\FileReader;
 use Framework3\Env\EnvBag;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
@@ -196,6 +196,12 @@ class Container implements ContainerInterface
                     $serviceArguments[] = $this->configContainer->getConfig(
                         substr($argument, 1, -1),
                         true
+                    );
+                    break;
+                // Env param
+                case substr($argument, 0, 4) === '$env':
+                    $serviceArguments[] = $this->envContainer->getEnv()->get(
+                        substr($argument, 5, -1)
                     );
                     break;
                 // Simple value

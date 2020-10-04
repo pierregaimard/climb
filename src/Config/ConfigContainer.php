@@ -3,7 +3,7 @@
 namespace Framework3\Config;
 
 use Framework3\Exception\AppException;
-use Framework3\FileReader\FileReader;
+use Framework3\Filesystem\FileReader;
 
 class ConfigContainer
 {
@@ -131,11 +131,11 @@ class ConfigContainer
      */
     private function loadConfig($path)
     {
-        if (!$this->fileReader->hasFile($path)) {
+        if (!$this->fileReader->has($path)) {
             return false;
         }
 
-        return $this->fileReader->getFile($path, FileReader::TYPE_CONFIG);
+        return $this->fileReader->getContent($path, FileReader::TYPE_STRING);
     }
 
     /**
