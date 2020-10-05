@@ -24,37 +24,16 @@ class OptionParser
     private OptionParserTools $tools;
 
     /**
-     * @var OptionParserStateStart
+     * @var OptionCharacterParser
      */
-    private OptionParserStateStart $parserStart;
-
-    /**
-     * @var OptionParserStateArrayStart
-     */
-    private OptionParserStateArrayStart $parserArrayStart;
-
-    /**
-     * @var OptionParserStateStringStart
-     */
-    private OptionParserStateStringStart $parserStringStart;
-
-    /**
-     * @var OptionParserStateEnd
-     */
-    private OptionParserStateEnd $parserEnd;
+    private OptionCharacterParser $characterParser;
 
     public function __construct(
         OptionParserTools $tools,
-        OptionParserStateStart $parserStart,
-        OptionParserStateArrayStart $parserArrayStart,
-        OptionParserStateStringStart $parserStringStart,
-        OptionParserStateEnd $parserEnd
+        OptionCharacterParser $characterParser
     ) {
-        $this->tools             = $tools;
-        $this->parserStart       = $parserStart;
-        $this->parserArrayStart  = $parserArrayStart;
-        $this->parserStringStart = $parserStringStart;
-        $this->parserEnd         = $parserEnd;
+        $this->tools           = $tools;
+        $this->characterParser = $characterParser;
     }
 
     /**
@@ -99,27 +78,7 @@ class OptionParser
             $bot->increaseCounter();
             $bot->setCharacter(new OptionCharacter($character));
 
-            switch ($bot->getState()) {
-                // Option declaration start
-                case OptionsParserBot::STATE_OPTION_START:
-                    $this->parserStart->parse($bot, $annotationName);
-                    break;
-
-                // Array option declaration start
-                case OptionsParserBot::STATE_ARRAY_OPTION_START:
-                    $this->parserArrayStart->parse($bot, $annotationName);
-                    break;
-
-                // String option declaration start
-                case OptionsParserBot::STATE_STRING_OPTION_START:
-                    $this->parserStringStart->parse($bot);
-                    break;
-
-                // Option declaration end
-                case OptionsParserBot::STATE_OPTION_END:
-                    $this->parserEnd->parse($bot, $annotationName);
-                    break;
-            }
+            $this->characterParser->parseCharacter($bot, $annotationName);
 
             if ($bot->isToSave()) {
                 // $data is a key
