@@ -11,10 +11,10 @@ e.g. `@Route`
 
 ### Annotation name
 The annotation name:
-  - **MUST** start width uppercase.
+-   **MUST** start width uppercase.
 
-  - Can only use alpha-numeric characters. `[a-zA-Z]`. It can't use special
-  characters or white spaces.   
+-   Can only use alpha-numeric characters. `[a-zA-Z]`. It can't use special
+    characters or white spaces.   
   
 e.g. `@MyAnnotationName`  
 _This option can be changed by changing the default annotation name declaration regex_
@@ -90,12 +90,12 @@ This configuration file contains 2 sections.
 
 ### CONFIG section
 This section contains 2 global annotation settings:
-  - **ANNOTATION_NAME_VALID_REGEX**  
-  This Regex defines the valid regex for annotation name used in annotation declaration.
+-   **ANNOTATION_NAME_VALID_REGEX**  
+    This Regex defines the valid regex for annotation name used in annotation declaration.
+    
+-   **OPTION_KEY_VALID_REGEX**  
+    This regex defines the valid regex for annotation option name used in annotation declaration.
   
-  - **OPTION_KEY_VALID_REGEX**  
-  This regex defines the valid regex for annotation option name used in annotation declaration.
-        
         {
           "CONFIG": {
             "ANNOTATION_NAME_VALID_REGEX": "#^([A-Z][a-z]+)+([\\\\\\\\]?[A-Z][a-z]+)*$#",
