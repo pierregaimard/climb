@@ -1,0 +1,14 @@
+{
+  "CONFIG": {
+    "ANNOTATION_NAME_VALID_REGEX": "#^([A-Z][a-z]+)+([\\\\\\\\]?[A-Z][a-z]+)*$#",
+    "OPTION_KEY_VALID_REGEX": "#^[a-zA-Z][a-zA-Z0-9]*(_?[a-zA-Z0-9]+)*$#"
+  },
+  "ANNOTATIONS": {
+    "Route": {
+      "class": "Framework3\\Routing\\Annotation\\Route"
+    },
+    "Security": {
+      "class": "Framework3\\Security\\Annotation\\Security"
+    }
+  }
+}
