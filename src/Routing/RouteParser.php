@@ -60,9 +60,9 @@ class RouteParser
      */
     public function isRouteMatch(RouteAnnotation $routeAnnotation, string $requestPath): bool
     {
-        $routePathExplode = explode('/', $routeAnnotation->getPath());
+        $routePathExplode   = explode('/', $routeAnnotation->getPath());
         $requestPathExplode = explode('/', $requestPath);
-        $count = 0;
+        $count              = 0;
 
         foreach ($routePathExplode as &$item) {
             $isVariableRouteItem = $this->isVariableRoutePathItem($item);
@@ -106,10 +106,10 @@ class RouteParser
      */
     public function getRouteData(RouteAnnotation $routeAnnotation, string $requestPath): array
     {
-        $data = [];
+        $data               = [];
         $routePathExplode   = explode('/', $routeAnnotation->getPath());
         $requestPathExplode = explode('/', $requestPath);
-        $count = 0;
+        $count              = 0;
 
         foreach ($routePathExplode as $item) {
             if ($this->isVariableRoutePathItem($item)) {
@@ -140,6 +140,7 @@ class RouteParser
                 return $route->getRegex()[$var];
             }
         }
+        
         return '.*';
     }
 }
