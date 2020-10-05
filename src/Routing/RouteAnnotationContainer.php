@@ -17,11 +17,11 @@ class RouteAnnotationContainer
     private array $container = [];
 
     /**
-     * @param ReaderManagerInterface   $readerManager
+     * @param ReaderManagerInterface $readerManager
      */
     public function __construct(ReaderManagerInterface $readerManager)
     {
-        $this->readerManager   = $readerManager;
+        $this->readerManager = $readerManager;
     }
 
     /**
