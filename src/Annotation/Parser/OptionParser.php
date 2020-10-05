@@ -16,7 +16,7 @@ class OptionParser
      * This option is used when parsing annotation options.
      * It returns parsed data as an array of OptionData objects.
      */
-    private const RETURN_TYPE_ARRAY  = 2;
+    private const RETURN_TYPE_ARRAY = 2;
 
     /**
      * @var OptionParserTools
