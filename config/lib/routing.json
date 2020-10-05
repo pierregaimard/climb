@@ -1,0 +1,8 @@
+{
+  "STATUS_PAGES": {
+    "404": {
+      "controller": "Climb\\Controller\\Status\\StatusController",
+      "method": "notFound"
+    }
+  }
+}
