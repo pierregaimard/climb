@@ -69,7 +69,7 @@ class OptionParserTools
      */
     public function getOptionIntVal(string $value): int
     {
-        return intval($value);
+        return (int)$value;
     }
 
     /**
