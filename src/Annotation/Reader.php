@@ -370,22 +370,18 @@ class Reader implements ReaderInterface
         $annotations = [];
 
         foreach ($reflections as $reflection) {
-            if ($unique === true) {
-                $result = $this->annotationManager->getAnnotation(
-                    $reflection->getDocComment(),
-                    $annotation
-                );
-                if ($result !== null) {
-                    $annotations[$reflection->getName()] = $result;
-                }
-            } else {
-                $result = $this->annotationManager->getAnnotations(
-                    $reflection->getDocComment(),
-                    $annotation
-                );
-                if ($result !== null) {
-                    $annotations[$reflection->getName()] = $result;
-                }
+            $result = ($unique === true) ?
+                    $this->annotationManager->getAnnotation(
+                        $reflection->getDocComment(),
+                        $annotation
+                    ) :
+                    $this->annotationManager->getAnnotations(
+                        $reflection->getDocComment(),
+                        $annotation
+                    );
+
+            if ($result !== null) {
+                $annotations[$reflection->getName()] = $result;
             }
         }
 
