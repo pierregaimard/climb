@@ -61,6 +61,11 @@
   "Framework3\\Annotation\\Parser\\OptionParser": {
     "argument": [
       "@Framework3\\Annotation\\Parser\\OptionParserTools",
+      "@Framework3\\Annotation\\Parser\\OptionCharacterParser"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\OptionCharacterParser": {
+    "argument": [
       "@Framework3\\Annotation\\Parser\\OptionParserStateStart",
       "@Framework3\\Annotation\\Parser\\OptionParserStateArrayStart",
       "@Framework3\\Annotation\\Parser\\OptionParserStateStringStart",
