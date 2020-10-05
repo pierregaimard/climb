@@ -92,7 +92,7 @@ This configuration file contains 2 sections.
 This section contains 2 global annotation settings:
 -   **ANNOTATION_NAME_VALID_REGEX**  
     This Regex defines the valid regex for annotation name used in annotation declaration.
-    
+
 -   **OPTION_KEY_VALID_REGEX**  
     This regex defines the valid regex for annotation option name used in annotation declaration.
   
