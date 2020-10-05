@@ -23,5 +23,53 @@
       "{lib/twig}",
       "$env(BASE_DIR)"
     ]
+  },
+  "Framework3\\Annotation\\ReaderManager": {
+    "argument": [
+      "@Framework3\\Annotation\\AnnotationManager"
+    ]
+  },
+  "Framework3\\Annotation\\AnnotationManager": {
+    "argument": [
+      "{lib/annotation}",
+      "@Framework3\\Annotation\\Parser\\AnnotationParser"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\AnnotationParser": {
+    "argument": [
+      "@Framework3\\Annotation\\Parser\\OptionParser",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserTools",
+      "@Framework3\\Annotation\\Parser\\AnnotationCharacterParser"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\AnnotationCharacterParser": {
+    "argument": [
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateStart",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateNameStart",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateName",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateNameEnd",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateOptionsStart",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateStringOptionStart",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateOptionsEnd"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\AnnotationParserTools": {
+    "argument": [
+      "{lib/annotation}"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\OptionParser": {
+    "argument": [
+      "@Framework3\\Annotation\\Parser\\OptionParserTools",
+      "@Framework3\\Annotation\\Parser\\OptionParserStateStart",
+      "@Framework3\\Annotation\\Parser\\OptionParserStateArrayStart",
+      "@Framework3\\Annotation\\Parser\\OptionParserStateStringStart",
+      "@Framework3\\Annotation\\Parser\\OptionParserStateEnd"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\OptionParserTools": {
+    "argument": [
+      "{lib/annotation}"
+    ]
   }
 }
