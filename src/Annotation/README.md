@@ -5,30 +5,31 @@ retrieve it into php classes.
 
 ## Declaration 
 _Rules to be observed when declaring an annotation in the docComment_
-##### Identification
+### Identification
 The identification character of an annotation **MUST** be an `@`  
 e.g. `@Route`
 
-##### Annotation name
+### Annotation name
 The annotation name:
-- **MUST** start width uppercase. \[A-Z\].
-- Can only use alpha-numeric characters. [a-zA-Z]. It can't use special
+- **MUST** start width uppercase.
+
+- Can only use alpha-numeric characters. `[a-zA-Z]`. It can't use special
   characters or white spaces.   
   
 e.g. `@MyAnnotationName`  
 _This option can be changed by changing the default annotation name declaration regex_
 
   
-##### Options
-###### Declaration
+### Options
+#### Declaration
 When options are needed it **MUST** be declared between parentheses.  
 e.g. `@Route(name="my_route")`  
 
-###### Separator
+#### Separator
 Each option must be separated by a comma.  
 `option1, option2`
 
-###### Options types
+#### Options types
 Four types can be declared in an annotation:
 <table>
     <thead>
@@ -68,30 +69,31 @@ Four types can be declared in an annotation:
     </tbody>
 </table>
 
-###### Key
+#### Key
 A key can be specified for any type of data, but it is optional.  
 In this case, the affectation operator `=` must be used.  
 
 e.g. `key = "my value"` or `myArray = { 1254, number = 545, "Hello world" }`  
 
-###### Level
+#### Level
 annotations can be declared at the class, method and attribute level.  
 
 ## Annotation classes 
 Foreach annotation you **MUST** declare an annotation class who implements
 **AnnotationInterface**.  
 
-###### Attributes
+### Attributes
 Every attribute used in annotation declaration **MUST** exist in the annotation class.  
 Getter and Setter **MUST** be declared for each attribute too.
 
 ## Annotation configuration
 This configuration file contains 2 sections.
 
-###### CONFIG section
+### CONFIG section
 This section contains 2 global annotation settings:
 - **ANNOTATION_NAME_VALID_REGEX**  
   This Regex defines the valid regex for annotation name used in annotation declaration.
+  
 - **OPTION_KEY_VALID_REGEX**  
   This regex defines the valid regex for annotation option name used in annotation declaration.
         
@@ -102,7 +104,7 @@ This section contains 2 global annotation settings:
           }
         }  
   
-###### ANNOTATIONS section
+### ANNOTATIONS section
 Each annotation **MUST** be declared in the configuration file
 in the ANNOTATION section.  
 
@@ -110,8 +112,7 @@ The key **MUST** be the annotation **Tag** name.
 e.g. `Route` for `@Route` annotation declaration.  
 
 A `class` key **MUST** be added to each annotation declaration to declare the
-annotation class namespace.   
-
+annotation class namespace.
         
     // Exemple for @Route width Climb\Router\Annotation\Route 
     
@@ -123,7 +124,6 @@ annotation class namespace.
       }
     }
     
-
 
 ## Annotation Reader
 Reader class is used to retrieve annotations declarations from a given class docComment.  
