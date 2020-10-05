@@ -183,7 +183,7 @@ class OptionParser
         // Stores the option in terms of the return type who have been asked
         switch ($returnType) {
             case self::RETURN_TYPE_ARRAY:
-                $bot->addArrayOption();
+                $bot->setArrayOption();
 
                 return;
 
@@ -196,7 +196,7 @@ class OptionParser
                     );
                 }
 
-                $bot->addObjectOption();
+                $bot->setObjectOption();
 
                 return;
         }

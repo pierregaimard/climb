@@ -325,7 +325,7 @@ class OptionsParserBot extends AbstractParserBot
         $this->options = $options;
     }
 
-    public function addArrayOption(): void
+    public function setArrayOption(): void
     {
         if ($this->key) {
             $this->options[$this->key] = $this->value;
@@ -335,7 +335,7 @@ class OptionsParserBot extends AbstractParserBot
         $this->options[] = $this->value;
     }
 
-    public function addObjectOption(): void
+    public function setObjectOption(): void
     {
         $this->options[$this->key] = new OptionData($this->valueType, $this->key, $this->value);
     }
