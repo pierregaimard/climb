@@ -122,11 +122,11 @@ class RouteBuilder implements RouteBuilderInterface
 
         // else building the route path
         $explodePath = explode('/', substr($routeAnnotation->getPath(), 1));
-        $path = '';
+        $path        = '';
 
         foreach ($explodePath as $item) {
             $routeItem = $this->setRouteItem($item, $data, $routeName, $controller, $routeAnnotation);
-            $path .= '/' . $routeItem;
+            $path     .= '/' . $routeItem;
         }
 
         return $path;
