@@ -89,11 +89,11 @@ class AnnotationParser
      * Save all annotations if `$annotation` is not set or just `$annotation` name
      *
      * @param AnnotationParserBot $bot
-     * @param string              $annotation
+     * @param string|null         $annotation
      *
      * @throws AppException
      */
-    private function storeAnnotationData(AnnotationParserBot $bot, string $annotation): void
+    private function storeAnnotationData(AnnotationParserBot $bot, string $annotation = null): void
     {
         if ($annotation === null || $annotation === $bot->getName()) {
             $this->isInvalidAnnotationName($bot);
