@@ -8,10 +8,10 @@ namespace Framework3\Annotation\Parser;
 
 class OptionData
 {
-    public const VAL_TYPE_INT = 'int';
+    public const VAL_TYPE_INT    = 'int';
     public const VAL_TYPE_STRING = 'string';
-    public const VAL_TYPE_BOOL = 'bool';
-    public const VAL_TYPE_ARRAY = 'array';
+    public const VAL_TYPE_BOOL   = 'bool';
+    public const VAL_TYPE_ARRAY  = 'array';
 
     /**
      * Represents the option key.
