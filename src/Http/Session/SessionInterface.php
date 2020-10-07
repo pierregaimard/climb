@@ -93,7 +93,7 @@ interface SessionInterface
      *
      * @param array $data
      */
-    public function addAll(array $data): void;
+    public function setAll(array $data): void;
 
     /**
      * Should unset all App session data.
