@@ -189,7 +189,7 @@ class Response
     protected function setContentTypeHeader()
     {
         $charset = (substr($this->contentType, 0, 4) === "text") ? "; charset=$this->charset" : null;
-        header("Content-Type: " . $this->contentType . $charset);
+        $this->setHeader("Content-Type: " . $this->contentType . $charset);
     }
 
     /**
@@ -198,7 +198,7 @@ class Response
      */
     protected function setStatusHeader(): void
     {
-        header("Status: $this->statusName", false, $this->statusCode);
+        $this->setHeader("Status: $this->statusName", false, $this->statusCode);
     }
 
     /**
@@ -221,6 +221,16 @@ class Response
 
         $this->setStatusHeader();
         $this->setContentTypeHeader();
+    }
+
+    /**
+     * @param string   $header
+     * @param false    $replace
+     * @param int|null $code
+     */
+    protected function setHeader(string $header, $replace = true, int $code = null): void
+    {
+        header($header, $replace, $code);
     }
 
     /**
