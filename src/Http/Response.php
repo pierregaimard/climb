@@ -8,23 +8,23 @@ use Framework3\Http\Session\SessionInterface;
 
 class Response
 {
-    public const STATUS_OK =            ['code' => 200, 'name' => '200 OK'];
-    public const STATUS_NO_CONTENT =    ['code' => 204, 'name' => '204 No Content'];
-    public const STATUS_BAD_REQUEST =   ['code' => 400, 'name' => '400 Bad Request'];
-    public const STATUS_UNAUTHORIZED =  ['code' => 401, 'name' => '401 Unauthorized'];
-    public const STATUS_FORBIDDEN =     ['code' => 403, 'name' => '403 Forbidden'];
-    public const STATUS_NOT_FOUND =     ['code' => 404, 'name' => '404 Not Found'];
+    public const STATUS_OK           = ['code' => 200, 'name' => '200 OK'];
+    public const STATUS_NO_CONTENT   = ['code' => 204, 'name' => '204 No Content'];
+    public const STATUS_BAD_REQUEST  = ['code' => 400, 'name' => '400 Bad Request'];
+    public const STATUS_UNAUTHORIZED = ['code' => 401, 'name' => '401 Unauthorized'];
+    public const STATUS_FORBIDDEN    = ['code' => 403, 'name' => '403 Forbidden'];
+    public const STATUS_NOT_FOUND    = ['code' => 404, 'name' => '404 Not Found'];
 
-    public const MIME_TEXT_PAIN =       "text/plain";
-    public const MIME_TEXT_HTML =       "text/html";
+    public const MIME_TEXT_PAIN       = "text/plain";
+    public const MIME_TEXT_HTML       = "text/html";
     public const MIME_TEXT_JAVASCRIPT = "text/javascript";
-    public const MIME_TEXT_CALENDAR =   "text/calendar";
-    public const MIME_TEXT_CSV =        "text/csv";
-    public const MIME_APP_JSON =        "application/json";
-    public const MIME_APP_XML =         "application/xml";
-    public const MIME_APP_PDF =         "application/pdf";
-    public const MIME_APP_ZIP =         "application/zip";
-    public const CHARSET_UTF8 =         "UTF-8";
+    public const MIME_TEXT_CALENDAR   = "text/calendar";
+    public const MIME_TEXT_CSV        = "text/csv";
+    public const MIME_APP_JSON        = "application/json";
+    public const MIME_APP_XML         = "application/xml";
+    public const MIME_APP_PDF         = "application/pdf";
+    public const MIME_APP_ZIP         = "application/zip";
+    public const CHARSET_UTF8         = "UTF-8";
 
     /**
      * @var string
@@ -232,7 +232,7 @@ class Response
         $this->setHeaders();
         #Content
         if ($this->content) {
-            echo filter_var($this->getContent());
+            echo $this->getContent();
         }
     }
 }
