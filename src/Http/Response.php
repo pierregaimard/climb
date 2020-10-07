@@ -232,7 +232,7 @@ class Response
         $this->setHeaders();
         #Content
         if ($this->content) {
-            echo $this->getContent();
+            echo filter_var($this->getContent());
         }
     }
 }
