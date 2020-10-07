@@ -6,11 +6,6 @@ use Generator;
 use Traversable;
 use IteratorAggregate;
 
-/**
- * Class Bag
- *
- * @package Climb\Http
- */
 class Bag implements IteratorAggregate
 {
     /**
@@ -118,5 +113,13 @@ class Bag implements IteratorAggregate
     public function removeAll(): void
     {
         $this->bag = [];
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEmpty(): bool
+    {
+        return empty($this->bag);
     }
 }
