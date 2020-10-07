@@ -54,8 +54,13 @@ class Session implements SessionInterface
     {
         $session = $this->getFromGlobal();
 
-        $this->initializeFlashes($session);
-        $this->initializeRequestData($session);
+        if (array_key_exists(self::FLASHES, $session) && $session[self::FLASHES] !== null) {
+            $this->flashes->setAll($session[self::FLASHES]);
+        }
+
+        if (array_key_exists(self::REQUEST_DATA, $session) && $session[self::REQUEST_DATA] !== null) {
+            $this->requestData->setAll($session[self::REQUEST_DATA]);
+        }
     }
 
     /**
@@ -72,16 +77,6 @@ class Session implements SessionInterface
     }
 
     /**
-     * @param array $session
-     */
-    private function initializeFlashes(array $session): void
-    {
-        if (array_key_exists(self::FLASHES, $session) && $session[self::FLASHES] !== null) {
-            $this->flashes->setAll($session[self::FLASHES]);
-        }
-    }
-
-    /**
      * @return Bag
      */
     public function getRequestData(): Bag
@@ -93,17 +88,7 @@ class Session implements SessionInterface
     {
         $this->write(self::REQUEST_DATA, $this->getRequestData()->getAll());
     }
-
-    /**
-     * @param array $session
-     */
-    private function initializeRequestData(array $session): void
-    {
-        if (array_key_exists(self::REQUEST_DATA, $session) && $session[self::REQUEST_DATA] !== null) {
-            $this->requestData->setAll($session[self::REQUEST_DATA]);
-        }
-    }
-
+    
     /**
      * @param string $item
      *
@@ -166,7 +151,7 @@ class Session implements SessionInterface
     /**
      * @param array $data
      */
-    public function addAll(array $data): void
+    public function setAll(array $data): void
     {
         $this->write(self::APP, $data);
     }
