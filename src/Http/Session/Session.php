@@ -88,7 +88,7 @@ class Session implements SessionInterface
     {
         $this->write(self::REQUEST_DATA, $this->getRequestData()->getAll());
     }
-    
+
     /**
      * @param string $item
      *
