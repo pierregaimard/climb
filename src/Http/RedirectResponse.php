@@ -19,6 +19,6 @@ class RedirectResponse extends Response
     public function send(): void
     {
         $this->setSessionData();
-        header("Location: " . $this->routePath);
+        $this->setHeader("Location: " . $this->routePath);
     }
 }
