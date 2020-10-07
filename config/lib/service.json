@@ -103,5 +103,22 @@
     "argument": [
       "@Framework3\\Annotation\\ReaderManager"
     ]
+  },
+  "Framework3\\Security\\UserManager": {
+    "argument": [
+      "@Framework3\\Security\\UserPasswordManager",
+      "@Framework3\\Http\\Session\\Session"
+    ]
+  },
+  "Framework3\\Security\\SecurityChecker": {
+    "argument": [
+      "@Framework3\\Security\\UserManager",
+      "@Framework3\\Annotation\\ReaderManager"
+    ]
+  },
+  "Framework3\\Security\\UserPasswordManager": {
+    "argument": [
+      "{lib/security}"
+    ]
   }
 }

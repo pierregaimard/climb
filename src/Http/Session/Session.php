@@ -166,7 +166,8 @@ class Session implements SessionInterface
      */
     public function getUser(): ?UserInterface
     {
-        return $this->read(self::USER);
+        $user = $this->read(self::USER);
+        return ($user instanceof UserInterface) ? $user : null;
     }
 
     /**
