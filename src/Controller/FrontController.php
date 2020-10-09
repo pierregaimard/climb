@@ -82,7 +82,7 @@ class FrontController
     public function getResponse(): Response
     {
         $request = $this->kernel->getRequest();
-        $route = $this->kernel->getRouter()->getRoute($request->getPath());
+        $route   = $this->kernel->getRouter()->getRoute($request->getPath());
 
         // 404 Not found
         if ($route === false) {
@@ -96,8 +96,8 @@ class FrontController
 
         // set controller
         $controller = $this->getController($route->getController());
-        $method = $route->getMethod();
-        $data = $route->getData();
+        $method     = $route->getMethod();
+        $data       = $route->getData();
 
         // get response from controller
         $response = (is_array($data)) ? $controller->$method(...$data) : $controller->$method();
