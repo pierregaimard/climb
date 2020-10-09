@@ -1,0 +1,6 @@
+.idea
+.htaccess
+vendor
+test
+public
+.env

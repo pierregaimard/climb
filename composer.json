@@ -1,0 +1,26 @@
+{
+    "name": "pierregaimard/framework3",
+    "version": "0.1.0",
+    "description": "Php framework project",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pierre Gaimard",
+            "email": "pierre@gaimard-family.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework3\\": "src/",
+            "Test\\": "test/"
+        }
+    },
+    "require": {
+        "php": "^7.4",
+        "twig/twig": "^3.0",
+        "psr/container": "^1.0",
+        "ext-json": "*",
+        "ext-yaml": "*"
+    }
+}

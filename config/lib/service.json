@@ -1,0 +1,141 @@
+{
+  "Framework3\\ClassFinder\\AutoloadTools": {
+    "argument": [
+      "@Framework3\\Filesystem\\FileReader",
+      "$env(BASE_DIR)"
+    ]
+  },
+  "Framework3\\ClassFinder\\Scanner": {
+    "argument": [
+      "@Framework3\\Filesystem\\DirectoryReader"
+    ]
+  },
+  "Framework3\\ClassFinder\\Finder": {
+    "argument": [
+      "@Framework3\\ClassFinder\\AutoloadTools",
+      "@Framework3\\ClassFinder\\Scanner",
+      "$env(BASE_DIR)"
+    ]
+  },
+  "Framework3\\Templating\\Twig\\EnvironmentManager": {
+    "argument": [
+      "@Framework3\\ClassFinder\\AutoloadTools",
+      "{lib/twig}",
+      "$env(BASE_DIR)"
+    ]
+  },
+  "Framework3\\Templating\\Twig\\ExtensionManager": {
+    "argument": [
+      "@Framework3\\Routing\\RouteBuilder",
+      "@Framework3\\Security\\UserManager"
+    ]
+  },
+  "Framework3\\Templating\\Twig\\TemplatingManager": {
+    "argument": [
+      "@Framework3\\Templating\\Twig\\EnvironmentManager",
+      "@Framework3\\Templating\\Twig\\ExtensionManager"
+    ]
+  },
+  "Framework3\\Annotation\\ReaderManager": {
+    "argument": [
+      "@Framework3\\Annotation\\AnnotationManager"
+    ]
+  },
+  "Framework3\\Annotation\\AnnotationManager": {
+    "argument": [
+      "{lib/annotation}",
+      "@Framework3\\Annotation\\Parser\\AnnotationParser"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\AnnotationParser": {
+    "argument": [
+      "@Framework3\\Annotation\\Parser\\OptionParser",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserTools",
+      "@Framework3\\Annotation\\Parser\\AnnotationCharacterParser"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\AnnotationCharacterParser": {
+    "argument": [
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateStart",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateNameStart",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateName",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateNameEnd",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateOptionsStart",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateStringOptionStart",
+      "@Framework3\\Annotation\\Parser\\AnnotationParserStateOptionsEnd"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\AnnotationParserTools": {
+    "argument": [
+      "{lib/annotation}"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\OptionParser": {
+    "argument": [
+      "@Framework3\\Annotation\\Parser\\OptionParserTools",
+      "@Framework3\\Annotation\\Parser\\OptionCharacterParser"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\OptionCharacterParser": {
+    "argument": [
+      "@Framework3\\Annotation\\Parser\\OptionParserStateStart",
+      "@Framework3\\Annotation\\Parser\\OptionParserStateArrayStart",
+      "@Framework3\\Annotation\\Parser\\OptionParserStateStringStart",
+      "@Framework3\\Annotation\\Parser\\OptionParserStateEnd"
+    ]
+  },
+  "Framework3\\Annotation\\Parser\\OptionParserTools": {
+    "argument": [
+      "{lib/annotation}"
+    ]
+  },
+  "Framework3\\Routing\\RouteControllerContainer": {
+    "argument": [
+      "@Framework3\\ClassFinder\\Finder",
+      "{lib/controller}"
+    ]
+  },
+  "Framework3\\Routing\\Router": {
+    "argument": [
+      "@Framework3\\Annotation\\ReaderManager",
+      "@Framework3\\Routing\\RouteParser",
+      "@Framework3\\Routing\\RouteControllerContainer",
+      "@Framework3\\Routing\\RouteAnnotationContainer"
+    ]
+  },
+  "Framework3\\Routing\\RouteBuilder": {
+    "argument": [
+      "@Framework3\\Routing\\RouteParser",
+      "@Framework3\\Routing\\RouteControllerContainer",
+      "@Framework3\\Routing\\RouteAnnotationContainer",
+      "@Framework3\\Routing\\RouteBuilderUtils"
+    ]
+  },
+  "Framework3\\Routing\\RouteAnnotationContainer": {
+    "argument": [
+      "@Framework3\\Annotation\\ReaderManager"
+    ]
+  },
+  "Framework3\\Security\\UserManager": {
+    "argument": [
+      "@Framework3\\Security\\UserPasswordManager",
+      "@Framework3\\Http\\Session\\Session"
+    ]
+  },
+  "Framework3\\Security\\SecurityChecker": {
+    "argument": [
+      "@Framework3\\Security\\UserManager",
+      "@Framework3\\Annotation\\ReaderManager"
+    ]
+  },
+  "Framework3\\Security\\UserPasswordManager": {
+    "argument": [
+      "{lib/security}"
+    ]
+  },
+  "Framework3\\Routing\\GlobalRouteManager": {
+    "argument": [
+      "{lib/routing}"
+    ]
+  }
+}
