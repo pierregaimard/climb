@@ -25,22 +25,13 @@ In service configuration file ,a service must be declared width it's
 The arguments are declared width the key: `argument`  
 
 4 types of arguments can be passed to a service:
--  another service:  
-in this case, use the service id width @ prefix.  
-e.g. `@Router`
+-  **another service**: in this case, use the service id width @ prefix. e.g. `@Router`
 
--  single value:  
-simply declare the value.  
-e.g. `"my single value"` or `1234`
+-  **single value**: simply declare the value. e.g. `"my single value"` or `1234`
    
--  config file:  
-in this case, enclose the config path width braces  
-e.g. `{lib/router}`
+-  **config file**: in this case, enclose the config path width braces. e.g. `{lib/router}`
    
--  env var:  
-in this case, use the following declaration:
-`$env(MY_ENV_VAR)`
-e.g. `$env(BASE_DIR)`
+-  **env var**: in this case, use the following declaration: `$env(MY_ENV_VAR)`. e.g. `$env(BASE_DIR)`
 
 Json Exemple:
 
