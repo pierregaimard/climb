@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\Templating;
+namespace Framework3\Templating\Twig;
 
 use Framework3\ClassFinder\AutoloadTools;
 use Framework3\Config\ConfigBag;
@@ -8,12 +8,7 @@ use Framework3\Exception\AppException;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-/**
- * Class Twig
- *
- * @package Climb\Templating
- */
-class Twig
+class EnvironmentManager
 {
     /**
      * @var AutoloadTools
@@ -49,7 +44,7 @@ class Twig
      */
     private function getFrameworkTemplateDir(): string
     {
-        return str_replace($this->baseDir, '', __DIR__ . '/Template');
+        return str_replace($this->baseDir, '', __DIR__ . '/../Template');
     }
 
     /**
