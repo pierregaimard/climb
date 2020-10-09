@@ -9,10 +9,14 @@ class RedirectResponse extends Response
      */
     private string $routePath;
 
-    public function __construct(string $routePath, array $data)
+    public function __construct(string $routePath, array $data = null)
     {
         parent::__construct();
-        $this->getData()->setAll($data);
+
+        if (is_array($data)) {
+            $this->getData()->setAll($data);
+        }
+
         $this->routePath = $routePath;
     }
 
