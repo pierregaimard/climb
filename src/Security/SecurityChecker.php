@@ -37,12 +37,8 @@ class SecurityChecker
      *
      * @return bool
      */
-    public function checkUserAccess(Route $route): bool
+    public function isUserGranted(Route $route): bool
     {
-        if (!$this->userManager->hasUser()) {
-            return false;
-        }
-
         $reader = $this->readerManager->getReader($route->getController());
 
         $security = $reader->getMethodAnnotation(
@@ -53,6 +49,10 @@ class SecurityChecker
 
         if ($security === null) {
             return true;
+        }
+
+        if (!$this->userManager->hasUser()) {
+            return false;
         }
 
         $vote = false;
