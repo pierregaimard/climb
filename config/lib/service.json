@@ -17,11 +17,23 @@
       "$env(BASE_DIR)"
     ]
   },
-  "Framework3\\Templating\\Twig": {
+  "Framework3\\Templating\\Twig\\EnvironmentManager": {
     "argument": [
       "@Framework3\\ClassFinder\\AutoloadTools",
       "{lib/twig}",
       "$env(BASE_DIR)"
+    ]
+  },
+  "Framework3\\Templating\\Twig\\ExtensionManager": {
+    "argument": [
+      "@Framework3\\Routing\\RouteBuilder",
+      "@Framework3\\Security\\UserManager"
+    ]
+  },
+  "Framework3\\Templating\\Twig\\TemplatingManager": {
+    "argument": [
+      "@Framework3\\Templating\\Twig\\EnvironmentManager",
+      "@Framework3\\Templating\\Twig\\ExtensionManager"
     ]
   },
   "Framework3\\Annotation\\ReaderManager": {
@@ -119,6 +131,11 @@
   "Framework3\\Security\\UserPasswordManager": {
     "argument": [
       "{lib/security}"
+    ]
+  },
+  "Framework3\\Routing\\GlobalRouteManager": {
+    "argument": [
+      "{lib/routing}"
     ]
   }
 }
