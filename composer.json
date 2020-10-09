@@ -21,6 +21,5 @@
         "twig/twig": "^3.0",
         "psr/container": "^1.0",
         "ext-json": "*",
-        "ext-yaml": "*"
     }
 }
