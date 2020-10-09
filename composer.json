@@ -1,6 +1,6 @@
 {
     "name": "pierregaimard/framework3",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Php framework project",
     "type": "library",
     "license": "MIT",
@@ -20,6 +20,6 @@
         "php": "^7.4",
         "twig/twig": "^3.0",
         "psr/container": "^1.0",
-        "ext-json": "*",
+        "ext-json": "*"
     }
 }
