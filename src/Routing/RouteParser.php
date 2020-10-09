@@ -141,6 +141,6 @@ class RouteParser
             }
         }
         
-        return '.*';
+        return '[-0-9a-zA-Z]*';
     }
 }
