@@ -44,7 +44,7 @@ class EnvironmentManager
      */
     private function getFrameworkTemplateDir(): string
     {
-        return str_replace($this->baseDir, '', __DIR__ . '/../Template');
+        return __DIR__ . '/../Template';
     }
 
     /**
