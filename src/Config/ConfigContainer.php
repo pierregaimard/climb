@@ -96,8 +96,8 @@ class ConfigContainer
 
         if ($frameworkConfigFile && $appConfigFile) {
             $data = array_replace_recursive(
-                $this->getArrayData($appConfigFile, $this->appConfigFileType),
-                $this->getArrayData($frameworkConfigFile, self::TYPE_JSON)
+                $this->getArrayData($frameworkConfigFile, self::TYPE_JSON),
+                $this->getArrayData($appConfigFile, $this->appConfigFileType)
             );
 
             $this->container[$path] = new ConfigBag($path, $data);

@@ -15,7 +15,7 @@ class NotFoundController extends AbstractController
     public function notFound()
     {
         $response = new Response(Response::STATUS_NOT_FOUND);
-        $response->setContent('404 Not Found');
+        $response->setContent($this->render('404_not_found.html.twig'));
 
         return $response;
     }
