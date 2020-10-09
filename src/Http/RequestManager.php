@@ -13,14 +13,33 @@ class RequestManager
     {
         $session = new Session();
         $session->initialize();
+        $server = $this->getServer();
 
         return new Request(
-            filter_input_array(INPUT_SERVER),
+            $server,
             filter_input_array(INPUT_GET),
             filter_input_array(INPUT_POST),
             filter_input_array(INPUT_COOKIE),
-            filter_var_array($_FILES),
-            $session
+            $this->getFiles(),
+            $session,
+            str_replace('?' . $server['QUERY_STRING'], '', $server['REQUEST_URI']),
+            $server['REQUEST_METHOD']
         );
+    }
+
+    /**
+     * @return array
+     */
+    private function getServer(): array
+    {
+        return filter_var_array($_SERVER);
+    }
+
+    /**
+     * @return array
+     */
+    private function getFiles(): array
+    {
+        return filter_var_array($_FILES);
     }
 }

@@ -94,6 +94,8 @@ class Request
      * @param array|null       $cookie
      * @param array|null       $files
      * @param SessionInterface $session
+     * @param string           $requestPath
+     * @param string           $method
      */
     public function __construct(
         array $server,
@@ -101,7 +103,9 @@ class Request
         ?array $post,
         ?array $cookie,
         ?array $files,
-        SessionInterface $session
+        SessionInterface $session,
+        string $requestPath,
+        string $method
     ) {
         $this->setServer($server);
         $this->setGet($get);
@@ -109,6 +113,8 @@ class Request
         $this->setCookie($cookie);
         $this->setFiles($files);
         $this->setSession($session);
+        $this->setPath($requestPath);
+        $this->setMethod($method);
     }
 
     /**
