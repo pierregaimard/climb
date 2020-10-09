@@ -13,7 +13,7 @@ class SecurityController extends AbstractController
     public function forbidden()
     {
         $response = new Response(Response::STATUS_FORBIDDEN);
-        $response->setContent('403 Forbidden');
+        $response->setContent($this->render('403_forbidden.html.twig'));
 
         return $response;
     }
@@ -24,7 +24,7 @@ class SecurityController extends AbstractController
     public function unauthorized()
     {
         $response = new Response(Response::STATUS_UNAUTHORIZED);
-        $response->setContent('401 Unauthorized');
+        $response->setContent($this->render('401_unauthorized.html.twig'));
 
         return $response;
     }
