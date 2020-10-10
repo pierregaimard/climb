@@ -49,8 +49,8 @@ class ConfigContainer
      */
     public function __construct(FileReader $fileReader, EnvBag $env)
     {
-        $this->fileReader   = $fileReader;
-        $this->env = $env;
+        $this->fileReader = $fileReader;
+        $this->env        = $env;
         $this->setAppConfigDir();
         $this->setAppConfigFileType();
     }
