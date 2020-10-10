@@ -2,7 +2,7 @@
 
 namespace Framework3\Config;
 
-use Framework3\Env\EnvContainer;
+use Framework3\Env\EnvBag;
 use Framework3\Exception\AppException;
 use Framework3\Filesystem\FileReader;
 
@@ -22,9 +22,9 @@ class ConfigContainer
     private FileReader $fileReader;
 
     /**
-     * @var EnvContainer
+     * @var EnvBag
      */
-    private EnvContainer $envContainer;
+    private EnvBag $env;
 
     /**
      * @var string
@@ -42,15 +42,15 @@ class ConfigContainer
     private array $container = [];
 
     /**
-     * @param FileReader   $fileReader
-     * @param EnvContainer $envContainer
+     * @param FileReader $fileReader
+     * @param EnvBag     $env
      *
      * @throws AppException
      */
-    public function __construct(FileReader $fileReader, EnvContainer $envContainer)
+    public function __construct(FileReader $fileReader, EnvBag $env)
     {
         $this->fileReader   = $fileReader;
-        $this->envContainer = $envContainer;
+        $this->env = $env;
         $this->setAppConfigDir();
         $this->setAppConfigFileType();
     }
@@ -87,21 +87,21 @@ class ConfigContainer
         if (!$frameworkConfigFile) {
             $this->container[$path] = new ConfigBag(
                 $path,
-                $this->getArrayData($appConfigFile, $this->appConfigFileType)
+                $this->getArrayData($this->setEnvVars($appConfigFile), $this->appConfigFileType)
             );
         }
 
         if (!$appConfigFile) {
             $this->container[$path] = new ConfigBag(
                 $path,
-                $this->getArrayData($frameworkConfigFile, self::TYPE_JSON)
+                $this->getArrayData($this->setEnvVars($frameworkConfigFile), self::TYPE_JSON)
             );
         }
 
         if ($frameworkConfigFile && $appConfigFile) {
             $data = array_replace_recursive(
-                $this->getArrayData($frameworkConfigFile, self::TYPE_JSON),
-                $this->getArrayData($appConfigFile, $this->appConfigFileType)
+                $this->getArrayData($this->setEnvVars($frameworkConfigFile), self::TYPE_JSON),
+                $this->getArrayData($this->setEnvVars($appConfigFile), $this->appConfigFileType)
             );
 
             $this->container[$path] = new ConfigBag($path, $data);
@@ -143,6 +143,28 @@ class ConfigContainer
     }
 
     /**
+     * @param string $configFile
+     *
+     * @return string
+     */
+    private function setEnvVars(string $configFile): string
+    {
+        $configFile = preg_replace_callback(
+            '#\$env\(([a-zA-Z]+(_?[a-zA-Z0-9]+)*)\)#',
+            function ($matches) {
+                if ($this->env->has($matches[1])) {
+                    return $this->env->get($matches[1]);
+                }
+                
+                return $matches[0];
+            },
+            $configFile
+        );
+
+        return $configFile;
+    }
+
+    /**
      * @param string $path
      *
      * @return string
@@ -164,7 +186,7 @@ class ConfigContainer
 
     private function setAppConfigDir(): void
     {
-        $this->appConfigDir = $this->envContainer->getEnv()->get('CONFIG_DIR');
+        $this->appConfigDir = $this->env->get('CONFIG_DIR');
     }
 
     /**
@@ -172,7 +194,7 @@ class ConfigContainer
      */
     private function setAppConfigFileType(): void
     {
-        $appConfigFileType = $this->envContainer->getEnv()->get('CONFIG_FILE_TYPE');
+        $appConfigFileType = $this->env->get('CONFIG_FILE_TYPE');
 
         if (in_array($appConfigFileType, self::TYPES_EXT)) {
             throw new AppException(
