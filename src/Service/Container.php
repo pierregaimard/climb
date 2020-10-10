@@ -227,8 +227,7 @@ class Container implements ContainerInterface
     {
         $this->configContainer = new ConfigContainer(
             $this->container[FileReader::class],
-            $this->envContainer->getEnv()->get('CONFIG_DIR'),
-            $this->envContainer->getEnv()->get('CONFIG_FILE_TYPE')
+            $this->envContainer
         );
     }
 

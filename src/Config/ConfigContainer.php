@@ -2,6 +2,7 @@
 
 namespace Framework3\Config;
 
+use Framework3\Env\EnvContainer;
 use Framework3\Exception\AppException;
 use Framework3\Filesystem\FileReader;
 
@@ -21,6 +22,11 @@ class ConfigContainer
     private FileReader $fileReader;
 
     /**
+     * @var EnvContainer
+     */
+    private EnvContainer $envContainer;
+
+    /**
      * @var string
      */
     private string $appConfigDir;
@@ -36,19 +42,17 @@ class ConfigContainer
     private array $container = [];
 
     /**
-     * ConfigContainer constructor.
-     *
-     * @param FileReader $fileReader
-     * @param string     $appConfigDir
-     * @param string     $appConfigFileType
+     * @param FileReader   $fileReader
+     * @param EnvContainer $envContainer
      *
      * @throws AppException
      */
-    public function __construct(FileReader $fileReader, string $appConfigDir, string $appConfigFileType)
+    public function __construct(FileReader $fileReader, EnvContainer $envContainer)
     {
         $this->fileReader   = $fileReader;
-        $this->appConfigDir = $appConfigDir;
-        $this->setAppConfigFileType($appConfigFileType);
+        $this->envContainer = $envContainer;
+        $this->setAppConfigDir();
+        $this->setAppConfigFileType();
     }
 
     /**
@@ -158,13 +162,18 @@ class ConfigContainer
         return $this->appConfigDir . '/' . $path . self::TYPES_EXT[$this->appConfigFileType];
     }
 
+    private function setAppConfigDir(): void
+    {
+        $this->appConfigDir = $this->envContainer->getEnv()->get('CONFIG_DIR');
+    }
+
     /**
-     * @param string $appConfigFileType
-     *
      * @throws AppException
      */
-    private function setAppConfigFileType(string $appConfigFileType): void
+    private function setAppConfigFileType(): void
     {
+        $appConfigFileType = $this->envContainer->getEnv()->get('CONFIG_FILE_TYPE');
+
         if (in_array($appConfigFileType, self::TYPES_EXT)) {
             throw new AppException(
                 AppException::TYPE_ENV,
