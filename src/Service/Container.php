@@ -198,12 +198,6 @@ class Container implements ContainerInterface
                         true
                     );
                     break;
-                // Env param
-                case substr($argument, 0, 4) === '$env':
-                    $serviceArguments[] = $this->envContainer->getEnv()->get(
-                        substr($argument, 5, -1)
-                    );
-                    break;
                 // Simple value
                 default:
                     $serviceArguments[] = $argument;
@@ -227,7 +221,7 @@ class Container implements ContainerInterface
     {
         $this->configContainer = new ConfigContainer(
             $this->container[FileReader::class],
-            $this->envContainer
+            $this->envContainer->getEnv()
         );
     }
 
