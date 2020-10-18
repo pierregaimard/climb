@@ -93,14 +93,14 @@ class InsertRequestManager extends RequestManager
 
     /**
      * @param object $entity
-     * @param int    $id
+     * @param int    $primary
      *
      * @throws AppException
      */
-    private function setEntityId(object $entity, int $id): void
+    private function setEntityId(object $entity, int $primary): void
     {
         $idSetter = $this->builder->getUtils()->getDefaultPrimarySetterName();
-        $entity->$idSetter($id);
+        $entity->$idSetter($primary);
     }
 
     /**
