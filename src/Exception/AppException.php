@@ -18,6 +18,7 @@ class AppException extends Exception
     public const TYPE_NOT_FOUND                    = 10;
     public const TYPE_ENV                          = 11;
     public const TYPE_ENV_PARSER                   = 12;
+    public const TYPE_ORM                          = 13;
 
     /**
      * Exceptions titles
@@ -35,6 +36,7 @@ class AppException extends Exception
         10 => 'NotFoundException',
         11 => 'EnvFileException',
         12 => 'EnvParserException',
+        13 => 'OrmException',
     ];
 
     /**

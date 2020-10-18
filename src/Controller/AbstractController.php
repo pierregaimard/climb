@@ -5,12 +5,10 @@ namespace Framework3\Controller;
 use Framework3\Config\ConfigBag;
 use Framework3\Http\RedirectResponse;
 use Framework3\Http\Request;
+use Framework3\Orm\Orm;
 use Framework3\Routing\RouteBuilderInterface;
 use Framework3\Service\Container;
 use Twig\Environment;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Error\SyntaxError;
 use Framework3\Bag\Bag;
 use Framework3\Exception\AppException;
 use Framework3\Security\UserInterface;
@@ -25,7 +23,7 @@ class AbstractController
     /**
      * @var Container
      */
-    private Container $container;
+    protected Container $container;
 
     /**
      * @var Environment
@@ -70,16 +68,22 @@ class AbstractController
     }
 
     /**
+     * @return Orm
+     *
+     * @throws AppException
+     */
+    public function getOrm(): Orm
+    {
+        return $this->container->get(Orm::class);
+    }
+
+    /**
      * $this->environment->render() shortcut for controller
      *
      * @param string        $path
      * @param array|null    $data
      *
      * @return string
-     *
-     * @throws LoaderError
-     * @throws RuntimeError
-     * @throws SyntaxError
      */
     protected function render(string $path, array $data = null): string
     {

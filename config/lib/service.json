@@ -137,5 +137,95 @@
     "argument": [
       "{lib/routing}"
     ]
+  },
+  "Framework3\\Orm\\DbConnector": {
+    "argument": [
+      "@Framework3\\Orm\\DbConfigurationChecker",
+      "@Framework3\\Orm\\DbConnectionOptionManager",
+      "{lib/orm}"
+    ]
+  },
+  "Framework3\\Orm\\DbConnectionManager": {
+    "argument": [
+      "@Framework3\\Orm\\DbConnector"
+    ]
+  },
+  "Framework3\\Orm\\Orm": {
+    "argument": [
+      "@Framework3\\Orm\\ReadingRequestManagerContainer",
+      "@Framework3\\Orm\\WritingRequestManagerContainer",
+      "@Framework3\\Orm\\EntityRepositoryUtils",
+      "@Framework3\\Orm\\EntityMappingUtils"
+    ]
+  },
+  "Framework3\\Orm\\DbConfigurationChecker": {
+    "argument": [
+      "{lib/orm}"
+    ]
+  },
+  "Framework3\\Orm\\DbConnectionOptionManager": {
+    "argument": [
+      "@Framework3\\Orm\\DbConnectionMysqlOptionManager",
+      "{lib/orm}"
+    ]
+  },
+  "Framework3\\Orm\\EntityMappingManager": {
+    "argument": [
+      "@Framework3\\Annotation\\ReaderManager",
+      "@Framework3\\Orm\\EntityMappingUtils"
+    ]
+  },
+  "Framework3\\Orm\\EntityMappingUtils": {
+    "argument": [
+      "{lib/orm}"
+    ]
+  },
+  "Framework3\\Orm\\EntityDataManager": {
+    "argument": [
+      "@Framework3\\Orm\\EntityMappingUtils"
+    ]
+  },
+  "Framework3\\Orm\\EntityRepositoryUtils": {
+    "argument": [
+      "{lib/orm}"
+    ]
+  },
+  "Framework3\\Orm\\InsertRequestBuilder": {
+    "argument": [
+      "@Framework3\\Orm\\EntityMappingUtils"
+    ]
+  },
+  "Framework3\\Orm\\UpdateRequestBuilder": {
+    "argument": [
+      "@Framework3\\Orm\\EntityMappingUtils"
+    ]
+  },
+  "Framework3\\Orm\\DeleteRequestBuilder": {
+    "argument": [
+      "@Framework3\\Orm\\EntityMappingUtils"
+    ]
+  },
+  "Framework3\\Orm\\SelectRequestBuilder": {
+    "argument": [
+      "@Framework3\\Orm\\EntityMappingUtils"
+    ]
+  },
+  "Framework3\\Orm\\ReadingRequestManagerContainer": {
+    "argument": [
+      "@Framework3\\Orm\\DbConnectionManager",
+      "@Framework3\\Orm\\EntityMappingManager",
+      "@Framework3\\Orm\\EntityDataManager",
+      "@Framework3\\Orm\\SelectRequestBuilder"
+    ]
+  },
+  "Framework3\\Orm\\WritingRequestManagerContainer": {
+    "argument": [
+      "@Framework3\\Orm\\DbConnectionManager",
+      "@Framework3\\Orm\\EntityMappingManager",
+      "@Framework3\\Orm\\EntityDataManager",
+      "@Framework3\\Orm\\InsertRequestBuilder",
+      "@Framework3\\Orm\\UpdateRequestBuilder",
+      "@Framework3\\Orm\\DeleteRequestBuilder"
+    ]
   }
 }
