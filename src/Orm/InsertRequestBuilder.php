@@ -51,7 +51,6 @@ class InsertRequestBuilder extends RequestBuilder
         foreach ($columns as $column) {
             $count++;
             $virgule        = ($count < $nbColumns) ? ', ' : null;
-
             $sqlColumns    .= $column . $virgule;
             $sqlBindParams .= ':' . $column . $virgule;
         }
