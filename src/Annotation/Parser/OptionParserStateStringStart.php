@@ -33,7 +33,10 @@ class OptionParserStateStringStart
         }
 
         // If $char is escaped, remove escape character from data
-        if ($bot->getCharacter()->isEscapedChar($bot->getPrevCharacter()->getChar())) {
+        if (
+            $bot->getCharacter()->isEscapedChar($bot->getPrevCharacter()->getChar()) &&
+            $bot->getCharacter()->isStringOptionStart()
+        ) {
             $bot->setData(substr($bot->getData(), 0, -1));
         }
 
