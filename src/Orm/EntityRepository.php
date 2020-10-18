@@ -6,9 +6,9 @@ use Framework3\Exception\AppException;
 
 class EntityRepository
 {
-    public const OPT_LIMIT       = 'LIMIT';
-    public const OPT_OFFSET      = 'OFFSET';
-    public const OPT_ORDER_BY    = 'ORDER_BY';
+    public const OPT_LIMIT    = 'LIMIT';
+    public const OPT_OFFSET   = 'OFFSET';
+    public const OPT_ORDER_BY = 'ORDER_BY';
 
     /**
      * @var string Entity class name
@@ -74,7 +74,7 @@ class EntityRepository
     }
 
     /**
-     * @param array $option
+     * @param array|null $option
      *
      * @return array|null
      *
