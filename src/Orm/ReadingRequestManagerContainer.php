@@ -43,9 +43,9 @@ class ReadingRequestManagerContainer
         SelectRequestBuilder $selectBuilder
     ) {
         $this->connectionManager = $connectionManager;
-        $this->mappingManager = $mappingManager;
-        $this->dataManager = $dataManager;
-        $this->selectBuilder = $selectBuilder;
+        $this->mappingManager    = $mappingManager;
+        $this->dataManager       = $dataManager;
+        $this->selectBuilder     = $selectBuilder;
     }
 
     /**
