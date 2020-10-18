@@ -44,17 +44,17 @@ class EntityRepository
     }
 
     /**
-     * @param int $id
+     * @param int $primary
      *
      * @return object|null
      *
      * @throws AppException
      */
-    public function findOne(int $id): ?object
+    public function findOne(int $primary): ?object
     {
         return $this->eSelectManager->find([
             SelectRequestManager::ARG_CLASS => $this->entity,
-            SelectRequestManager::ARG_SEARCH => [$this->utils->getDefaultPrimaryName() => $id],
+            SelectRequestManager::ARG_SEARCH => [$this->utils->getDefaultPrimaryName() => $primary],
         ]);
     }
 
