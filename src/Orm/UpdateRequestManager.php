@@ -97,7 +97,7 @@ class UpdateRequestManager extends RequestManager
      */
     private function getPdoStatement(EntityMapping $mapping)
     {
-        $request  = $this->builder->getUpdateRequest($mapping->getTableName(), $mapping->getTableColumns());
+        $request = $this->builder->getUpdateRequest($mapping->getTableName(), $mapping->getTableColumns());
         return $this->getPdo()->prepare($request);
     }
 
