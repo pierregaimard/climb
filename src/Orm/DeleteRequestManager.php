@@ -71,8 +71,7 @@ class DeleteRequestManager extends RequestManager
     public function deleteAssociations(string $association, array $search): bool
     {
         $request = $this->builder->getDeleteRequest($association, $search);
-
-        $delete = $this->getPdo()->prepare($request);
+        $delete  = $this->getPdo()->prepare($request);
         $delete->execute($search);
 
         return true;
@@ -90,7 +89,6 @@ class DeleteRequestManager extends RequestManager
     {
         $mapping = $this->getMappingManager()->getEntityMapping($class);
         $request = $this->builder->getDeleteRequest($mapping->getTableName(), $search);
-
         $delete  = $this->getPdo()->prepare($request);
         $delete->execute($search);
 
