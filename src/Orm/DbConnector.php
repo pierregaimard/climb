@@ -8,15 +8,15 @@ use PDO;
 
 class DbConnector
 {
-    public const CONNECTION        = 'CONNECTION';
-    public const DRIVER            = 'DRIVER';
-    public const HOST              = 'HOST';
-    public const PORT              = 'PORT';
-    public const DBNAME            = 'DBNAME';
-    public const USERNAME          = 'USERNAME';
-    public const PASSWORD          = 'PASSWORD';
-    public const OPTIONS           = 'OPTIONS';
-    public const CHARSET           = 'CHARSET';
+    public const CONNECTION = 'CONNECTION';
+    public const DRIVER     = 'DRIVER';
+    public const HOST       = 'HOST';
+    public const PORT       = 'PORT';
+    public const DBNAME     = 'DBNAME';
+    public const USERNAME   = 'USERNAME';
+    public const PASSWORD   = 'PASSWORD';
+    public const OPTIONS    = 'OPTIONS';
+    public const CHARSET    = 'CHARSET';
 
     public const SUPPORTED_DRIVERS = [
         'mysql'
