@@ -9,6 +9,15 @@
     },
     "Security": {
       "class": "Framework3\\Security\\Annotation\\Security"
+    },
+    "Column": {
+      "class": "Framework3\\Orm\\Annotation\\Column"
+    },
+    "Table": {
+      "class": "Framework3\\Orm\\Annotation\\Table"
+    },
+    "Relation": {
+      "class": "Framework3\\Orm\\Annotation\\Relation"
     }
   }
 }

@@ -15,6 +15,8 @@ use Framework3\Annotation\AnnotationInterface;
  */
 class Route implements AnnotationInterface
 {
+    public const TAG = 'Route';
+
     /**
      * Route name
      *
