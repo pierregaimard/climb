@@ -73,11 +73,10 @@ class SelectRequestBuilder extends RequestBuilder
             return null;
         }
 
-        $orderBy = $option[EntityRepository::OPT_ORDER_BY];
-
-        $nbColumns   = count($orderBy);
-        $count       = 0;
-        $sqlOrderBy  = ' ORDER BY ';
+        $orderBy    = $option[EntityRepository::OPT_ORDER_BY];
+        $nbColumns  = count($orderBy);
+        $count      = 0;
+        $sqlOrderBy = ' ORDER BY ';
 
         foreach ($orderBy as $key => $value) {
             $count++;
