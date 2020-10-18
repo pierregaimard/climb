@@ -36,7 +36,6 @@ class SelectCollectionRequestManager extends SelectRequestManager
         $mapping    = $this->getMappingManager()->getEntityMapping(($arg[self::ARG_CLASS]));
         $select     = $this->executeSelectRequest($arg, $mapping);
         $invertedBy = $this->getInvertedBy($arg);
-
         $entities   = $this->getDataManager()->getEntityTab(
             $select->fetchAll(PDO::FETCH_CLASS, $arg[self::ARG_CLASS])
         );
