@@ -1,10 +1,10 @@
 <?php
 
-namespace Framework3\Http;
+namespace Climb\Http;
 
-use Framework3\Bag\Bag;
-use Framework3\Http\Session\Session;
-use Framework3\Http\Session\SessionInterface;
+use Climb\Bag\Bag;
+use Climb\Http\Session\Session;
+use Climb\Http\Session\SessionInterface;
 
 class Response
 {

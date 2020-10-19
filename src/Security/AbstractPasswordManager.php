@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Security;
+namespace Climb\Security;
 
-use Framework3\Exception\AppException;
+use Climb\Exception\AppException;
 
 class AbstractPasswordManager
 {

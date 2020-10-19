@@ -4,7 +4,7 @@
  * used to store one parsed annotation data with the correct type of value.
  */
 
-namespace Framework3\Annotation\Parser;
+namespace Climb\Annotation\Parser;
 
 class OptionData
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Orm;
+namespace Climb\Orm;
 
-use Framework3\Exception\AppException;
+use Climb\Exception\AppException;
 
 class ReadingRequestManagerContainer
 {

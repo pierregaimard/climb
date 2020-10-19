@@ -1,6 +1,6 @@
 {
-    "name": "pierregaimard/framework3",
-    "version": "0.1.3",
+    "name": "pierregaimard/climb",
+    "version": "0.1.4",
     "description": "Php framework project",
     "type": "library",
     "license": "MIT",
@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Framework3\\": "src/",
+            "Climb\\": "src/",
             "Test\\": "test/"
         }
     },

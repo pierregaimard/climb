@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Routing;
+namespace Climb\Routing;
 
-use Framework3\Annotation\ReaderManagerInterface;
+use Climb\Annotation\ReaderManagerInterface;
 
 class RouteAnnotationContainer
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Framework3\Routing;
+namespace Climb\Routing;
 
-use Framework3\Annotation\ReaderManagerInterface;
-use Framework3\Exception\AppException;
+use Climb\Annotation\ReaderManagerInterface;
+use Climb\Exception\AppException;
 
 class Router implements RouterInterface
 {

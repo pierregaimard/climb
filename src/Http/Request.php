@@ -1,14 +1,14 @@
 <?php
 
-namespace Framework3\Http;
+namespace Climb\Http;
 
-use Framework3\Http\Bag\ServerBag;
-use Framework3\Http\Bag\GetBag;
-use Framework3\Http\Bag\PostBag;
-use Framework3\Http\Bag\CookieBag;
-use Framework3\Http\Bag\FilesBag;
-use Framework3\Bag\Bag;
-use Framework3\Http\Session\SessionInterface;
+use Climb\Http\Bag\ServerBag;
+use Climb\Http\Bag\GetBag;
+use Climb\Http\Bag\PostBag;
+use Climb\Http\Bag\CookieBag;
+use Climb\Http\Bag\FilesBag;
+use Climb\Bag\Bag;
+use Climb\Http\Session\SessionInterface;
 
 class Request
 {

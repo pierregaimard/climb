@@ -1,10 +1,10 @@
 <?php
 
-namespace Framework3\Orm;
+namespace Climb\Orm;
 
 use PDO;
 use PDOStatement;
-use Framework3\Exception\AppException;
+use Climb\Exception\AppException;
 
 class SelectRequestManager extends RequestManager
 {

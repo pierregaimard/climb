@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\ClassFinder;
+namespace Climb\ClassFinder;
 
 interface FinderInterface
 {

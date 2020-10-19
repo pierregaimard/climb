@@ -1,9 +1,9 @@
 <?php
 
-namespace Framework3\Templating\Twig;
+namespace Climb\Templating\Twig;
 
-use Framework3\Routing\RouteBuilderInterface;
-use Framework3\Security\UserManagerInterface;
+use Climb\Routing\RouteBuilderInterface;
+use Climb\Security\UserManagerInterface;
 use Twig\Environment;
 use Twig\TwigFunction;
 

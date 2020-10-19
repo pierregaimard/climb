@@ -11,7 +11,7 @@
  *  and will return MY_SECOND_VAR="root/test"
  */
 
-namespace Framework3\Env;
+namespace Climb\Env;
 
 class EnvReferenceParser
 {

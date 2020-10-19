@@ -1,17 +1,17 @@
 <?php
 
-namespace Framework3;
+namespace Climb;
 
-use Framework3\Http\Request;
-use Framework3\Http\RequestManager;
-use Framework3\Routing\RouteBuilder;
-use Framework3\Routing\RouteBuilderInterface;
-use Framework3\Routing\Router;
-use Framework3\Routing\RouterInterface;
-use Framework3\Security\UserManager;
-use Framework3\Security\UserManagerInterface;
-use Framework3\Service\Container;
-use Framework3\Templating\Twig\TemplatingManager;
+use Climb\Http\Request;
+use Climb\Http\RequestManager;
+use Climb\Routing\RouteBuilder;
+use Climb\Routing\RouteBuilderInterface;
+use Climb\Routing\Router;
+use Climb\Routing\RouterInterface;
+use Climb\Security\UserManager;
+use Climb\Security\UserManagerInterface;
+use Climb\Service\Container;
+use Climb\Templating\Twig\TemplatingManager;
 use Twig\Environment;
 
 class Kernel

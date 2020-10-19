@@ -1,9 +1,9 @@
 <?php
 
-namespace Framework3\Config;
+namespace Climb\Config;
 
-use Framework3\Bag\Bag;
-use Framework3\Exception\AppException;
+use Climb\Bag\Bag;
+use Climb\Exception\AppException;
 
 class ConfigBag extends Bag
 {

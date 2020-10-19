@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\Http;
+namespace Climb\Http;
 
 class RedirectResponse extends Response
 {

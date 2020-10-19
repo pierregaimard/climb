@@ -1,10 +1,10 @@
 <?php
 
-namespace Framework3\Orm;
+namespace Climb\Orm;
 
-use Framework3\Bag\Bag;
-use Framework3\Exception\AppException;
-use Framework3\Orm\Annotation\Relation;
+use Climb\Bag\Bag;
+use Climb\Exception\AppException;
+use Climb\Orm\Annotation\Relation;
 use PDO;
 
 class SelectCollectionRequestManager extends SelectRequestManager

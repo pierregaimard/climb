@@ -1,10 +1,10 @@
 <?php
 
-namespace Framework3\Orm;
+namespace Climb\Orm;
 
-use Framework3\Orm\Annotation\Column;
-use Framework3\Orm\Annotation\Relation;
-use Framework3\Orm\Annotation\Table;
+use Climb\Orm\Annotation\Column;
+use Climb\Orm\Annotation\Relation;
+use Climb\Orm\Annotation\Table;
 
 class EntityMapping
 {

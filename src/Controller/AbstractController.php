@@ -1,17 +1,17 @@
 <?php
 
-namespace Framework3\Controller;
+namespace Climb\Controller;
 
-use Framework3\Config\ConfigBag;
-use Framework3\Http\RedirectResponse;
-use Framework3\Http\Request;
-use Framework3\Orm\Orm;
-use Framework3\Routing\RouteBuilderInterface;
-use Framework3\Service\Container;
+use Climb\Config\ConfigBag;
+use Climb\Http\RedirectResponse;
+use Climb\Http\Request;
+use Climb\Orm\Orm;
+use Climb\Routing\RouteBuilderInterface;
+use Climb\Service\Container;
 use Twig\Environment;
-use Framework3\Bag\Bag;
-use Framework3\Exception\AppException;
-use Framework3\Security\UserInterface;
+use Climb\Bag\Bag;
+use Climb\Exception\AppException;
+use Climb\Security\UserInterface;
 
 class AbstractController
 {

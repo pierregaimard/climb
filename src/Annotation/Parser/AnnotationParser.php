@@ -6,9 +6,9 @@
  * Set of functions used to parse docComment and returns formatted annotation data.
  */
 
-namespace Framework3\Annotation\Parser;
+namespace Climb\Annotation\Parser;
 
-use Framework3\Exception\AppException;
+use Climb\Exception\AppException;
 
 class AnnotationParser
 {

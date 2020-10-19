@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Orm\Annotation;
+namespace Climb\Orm\Annotation;
 
-use Framework3\Annotation\AnnotationInterface;
+use Climb\Annotation\AnnotationInterface;
 
 class Table implements AnnotationInterface
 {

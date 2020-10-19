@@ -1,10 +1,10 @@
 <?php
 
-namespace Framework3\Config;
+namespace Climb\Config;
 
-use Framework3\Env\EnvBag;
-use Framework3\Exception\AppException;
-use Framework3\Filesystem\FileReader;
+use Climb\Env\EnvBag;
+use Climb\Exception\AppException;
+use Climb\Filesystem\FileReader;
 
 class ConfigContainer
 {

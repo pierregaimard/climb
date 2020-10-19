@@ -1,9 +1,9 @@
 <?php
 
-namespace Framework3\Routing;
+namespace Climb\Routing;
 
-use Framework3\Exception\AppException;
-use Framework3\Routing\Annotation\Route as RouteAnnotation;
+use Climb\Exception\AppException;
+use Climb\Routing\Annotation\Route as RouteAnnotation;
 
 class RouteBuilderUtils
 {

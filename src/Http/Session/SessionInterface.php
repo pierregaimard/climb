@@ -1,15 +1,10 @@
 <?php
 
-namespace Framework3\Http\Session;
+namespace Climb\Http\Session;
 
-use Framework3\Bag\Bag;
-use Framework3\Security\UserInterface;
+use Climb\Bag\Bag;
+use Climb\Security\UserInterface;
 
-/**
- * Interface SessionInterface
- *
- * @package Climb\Session
- */
 interface SessionInterface
 {
     /**

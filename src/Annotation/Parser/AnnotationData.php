@@ -8,7 +8,7 @@
  *  - an optional array of OptionData objects where OptionData represents the declaration of an annotation option.
  */
 
-namespace Framework3\Annotation\Parser;
+namespace Climb\Annotation\Parser;
 
 class AnnotationData
 {

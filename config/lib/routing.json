@@ -1,15 +1,15 @@
 {
   "STATUS_PAGES": {
     "404": {
-      "controller": "Framework3\\Controller\\Status\\NotFoundController",
+      "controller": "Climb\\Controller\\Status\\NotFoundController",
       "method": "notFound"
     },
     "403": {
-      "controller": "Framework3\\Controller\\Status\\SecurityController",
+      "controller": "Climb\\Controller\\Status\\SecurityController",
       "method": "forbidden"
     },
     "401": {
-      "controller": "Framework3\\Controller\\Status\\SecurityController",
+      "controller": "Climb\\Controller\\Status\\SecurityController",
       "method": "unauthorized"
     }
   }

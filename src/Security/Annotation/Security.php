@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Security\Annotation;
+namespace Climb\Security\Annotation;
 
-use Framework3\Annotation\AnnotationInterface;
+use Climb\Annotation\AnnotationInterface;
 
 class Security implements AnnotationInterface
 {

@@ -4,7 +4,7 @@
  * Represents a character during parsing of an annotation.
  */
 
-namespace Framework3\Annotation\Parser;
+namespace Climb\Annotation\Parser;
 
 abstract class AbstractCharacter
 {

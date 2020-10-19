@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Templating\Twig;
+namespace Climb\Templating\Twig;
 
-use Framework3\Exception\AppException;
+use Climb\Exception\AppException;
 use Twig\Environment;
 
 class TemplatingManager

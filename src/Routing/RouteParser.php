@@ -4,9 +4,9 @@
  * This service provides methods for the Router to parse a request path and compare it width a Route declaration.
  */
 
-namespace Framework3\Routing;
+namespace Climb\Routing;
 
-use Framework3\Routing\Annotation\Route as RouteAnnotation;
+use Climb\Routing\Annotation\Route as RouteAnnotation;
 
 class RouteParser
 {

@@ -4,7 +4,7 @@
  * Annotation Reader interface.
  */
 
-namespace Framework3\Annotation;
+namespace Climb\Annotation;
 
 interface ReaderInterface
 {

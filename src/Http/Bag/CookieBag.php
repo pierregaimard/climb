@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Http\Bag;
+namespace Climb\Http\Bag;
 
-use Framework3\Bag\Bag;
+use Climb\Bag\Bag;
 
 class CookieBag extends Bag
 {
