@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Security;
+namespace Climb\Security;
 
-use Framework3\Http\Session\SessionInterface;
+use Climb\Http\Session\SessionInterface;
 
 class UserManager implements UserManagerInterface
 {

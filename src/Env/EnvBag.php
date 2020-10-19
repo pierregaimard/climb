@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Env;
+namespace Climb\Env;
 
-use Framework3\Bag\Bag;
+use Climb\Bag\Bag;
 
 class EnvBag extends Bag
 {

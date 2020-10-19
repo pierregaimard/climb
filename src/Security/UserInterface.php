@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\Security;
+namespace Climb\Security;
 
 interface UserInterface
 {

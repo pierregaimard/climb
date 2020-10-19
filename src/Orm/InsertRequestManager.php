@@ -1,11 +1,11 @@
 <?php
 
-namespace Framework3\Orm;
+namespace Climb\Orm;
 
-use Framework3\Orm\Annotation\Relation;
+use Climb\Orm\Annotation\Relation;
 use PDO;
 use PDOStatement;
-use Framework3\Exception\AppException;
+use Climb\Exception\AppException;
 
 class InsertRequestManager extends RequestManager
 {

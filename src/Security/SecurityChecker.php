@@ -1,10 +1,10 @@
 <?php
 
-namespace Framework3\Security;
+namespace Climb\Security;
 
-use Framework3\Annotation\ReaderManagerInterface;
-use Framework3\Routing\Route;
-use Framework3\Security\Annotation\Security;
+use Climb\Annotation\ReaderManagerInterface;
+use Climb\Routing\Route;
+use Climb\Security\Annotation\Security;
 
 class SecurityChecker
 {

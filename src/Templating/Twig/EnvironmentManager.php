@@ -1,10 +1,10 @@
 <?php
 
-namespace Framework3\Templating\Twig;
+namespace Climb\Templating\Twig;
 
-use Framework3\ClassFinder\AutoloadTools;
-use Framework3\Config\ConfigBag;
-use Framework3\Exception\AppException;
+use Climb\ClassFinder\AutoloadTools;
+use Climb\Config\ConfigBag;
+use Climb\Exception\AppException;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 

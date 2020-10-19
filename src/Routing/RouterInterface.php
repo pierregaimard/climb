@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\Routing;
+namespace Climb\Routing;
 
 interface RouterInterface
 {

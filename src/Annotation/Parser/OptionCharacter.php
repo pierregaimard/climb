@@ -4,7 +4,7 @@
  * This class represents a character in the annotation options declaration.
  */
 
-namespace Framework3\Annotation\Parser;
+namespace Climb\Annotation\Parser;
 
 class OptionCharacter extends AbstractCharacter
 {

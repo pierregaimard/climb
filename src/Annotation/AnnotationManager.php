@@ -4,12 +4,12 @@
  * This class is used to return hydrated annotation objects from docComment.
  */
 
-namespace Framework3\Annotation;
+namespace Climb\Annotation;
 
-use Framework3\Annotation\Parser\AnnotationData;
-use Framework3\Annotation\Parser\AnnotationParser;
-use Framework3\Config\ConfigBag;
-use Framework3\Exception\AppException;
+use Climb\Annotation\Parser\AnnotationData;
+use Climb\Annotation\Parser\AnnotationParser;
+use Climb\Config\ConfigBag;
+use Climb\Exception\AppException;
 
 class AnnotationManager
 {

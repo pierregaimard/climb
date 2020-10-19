@@ -1,14 +1,14 @@
 <?php
 
-namespace Framework3\Service;
+namespace Climb\Service;
 
-use Framework3\Config\ConfigBag;
-use Framework3\Config\ConfigContainer;
-use Framework3\Env\EnvContainer;
-use Framework3\Exception\AppException;
-use Framework3\Exception\AppNotFoundException;
-use Framework3\Filesystem\FileReader;
-use Framework3\Env\EnvBag;
+use Climb\Config\ConfigBag;
+use Climb\Config\ConfigContainer;
+use Climb\Env\EnvContainer;
+use Climb\Exception\AppException;
+use Climb\Exception\AppNotFoundException;
+use Climb\Filesystem\FileReader;
+use Climb\Env\EnvBag;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;

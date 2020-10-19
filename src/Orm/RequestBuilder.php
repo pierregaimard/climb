@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\Orm;
+namespace Climb\Orm;
 
 class RequestBuilder
 {

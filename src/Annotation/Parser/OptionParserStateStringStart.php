@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\Annotation\Parser;
+namespace Climb\Annotation\Parser;
 
 class OptionParserStateStringStart
 {

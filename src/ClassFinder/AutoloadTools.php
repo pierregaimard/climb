@@ -4,10 +4,10 @@
  * This Class is used to retrieve Autoload configuration from composer.json
  */
 
-namespace Framework3\ClassFinder;
+namespace Climb\ClassFinder;
 
-use Framework3\Exception\AppException;
-use Framework3\Filesystem\FileReader;
+use Climb\Exception\AppException;
+use Climb\Filesystem\FileReader;
 
 class AutoloadTools
 {

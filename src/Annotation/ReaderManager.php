@@ -4,7 +4,7 @@
  * this class provides Lib\AnnotationReader instances
  */
 
-namespace Framework3\Annotation;
+namespace Climb\Annotation;
 
 use ReflectionException;
 

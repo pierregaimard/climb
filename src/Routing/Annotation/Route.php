@@ -4,15 +4,10 @@
  * Represents a route annotation.
  */
 
-namespace Framework3\Routing\Annotation;
+namespace Climb\Routing\Annotation;
 
-use Framework3\Annotation\AnnotationInterface;
+use Climb\Annotation\AnnotationInterface;
 
-/**
- * Class Route
- *
- * @package Climb\Routing\Annotation
- */
 class Route implements AnnotationInterface
 {
     public const TAG = 'Route';

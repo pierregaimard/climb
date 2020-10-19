@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\ClassFinder;
+namespace Climb\ClassFinder;
 
-use Framework3\Filesystem\DirectoryReader;
+use Climb\Filesystem\DirectoryReader;
 
 class Scanner
 {

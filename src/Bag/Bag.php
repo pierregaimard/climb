@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\Bag;
+namespace Climb\Bag;
 
 use Generator;
 use Traversable;

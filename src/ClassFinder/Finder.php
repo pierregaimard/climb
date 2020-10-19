@@ -4,9 +4,9 @@
  * Used to retrieve an array of classes from a given namespace.
  */
 
-namespace Framework3\ClassFinder;
+namespace Climb\ClassFinder;
 
-use Framework3\Exception\AppException;
+use Climb\Exception\AppException;
 
 class Finder implements FinderInterface
 {

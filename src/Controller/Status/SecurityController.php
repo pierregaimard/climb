@@ -1,9 +1,9 @@
 <?php
 
-namespace Framework3\Controller\Status;
+namespace Climb\Controller\Status;
 
-use Framework3\Http\Response;
-use Framework3\Controller\AbstractController;
+use Climb\Http\Response;
+use Climb\Controller\AbstractController;
 
 class SecurityController extends AbstractController
 {

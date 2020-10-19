@@ -4,11 +4,11 @@
  * This class provides methods to retrieve annotations from a class.
  */
 
-namespace Framework3\Annotation;
+namespace Climb\Annotation;
 
 use ReflectionClass;
 use ReflectionException;
-use Framework3\Exception\AppException;
+use Climb\Exception\AppException;
 
 class Reader implements ReaderInterface
 {

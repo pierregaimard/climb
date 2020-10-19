@@ -1,13 +1,13 @@
 <?php
 
-namespace Framework3\Orm;
+namespace Climb\Orm;
 
-use Framework3\Annotation\ReaderInterface;
-use Framework3\Annotation\ReaderManagerInterface;
-use Framework3\Exception\AppException;
-use Framework3\Orm\Annotation\Relation;
-use Framework3\Orm\Annotation\Table;
-use Framework3\Orm\Annotation\Column;
+use Climb\Annotation\ReaderInterface;
+use Climb\Annotation\ReaderManagerInterface;
+use Climb\Exception\AppException;
+use Climb\Orm\Annotation\Relation;
+use Climb\Orm\Annotation\Table;
+use Climb\Orm\Annotation\Column;
 
 class EntityMappingManager
 {

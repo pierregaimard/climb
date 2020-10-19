@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\Exception;
+namespace Climb\Exception;
 
 use Psr\Container\NotFoundExceptionInterface;
 

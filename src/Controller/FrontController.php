@@ -1,14 +1,14 @@
 <?php
 
-namespace Framework3\Controller;
+namespace Climb\Controller;
 
-use Framework3\Config\ConfigBag;
-use Framework3\Exception\AppException;
-use Framework3\Http\Response;
-use Framework3\Kernel;
-use Framework3\Routing\Route;
-use Framework3\Security\SecurityChecker;
-use Framework3\Routing\GlobalRouteManager;
+use Climb\Config\ConfigBag;
+use Climb\Exception\AppException;
+use Climb\Http\Response;
+use Climb\Kernel;
+use Climb\Routing\Route;
+use Climb\Security\SecurityChecker;
+use Climb\Routing\GlobalRouteManager;
 
 class FrontController
 {

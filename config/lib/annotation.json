@@ -5,19 +5,19 @@
   },
   "ANNOTATIONS": {
     "Route": {
-      "class": "Framework3\\Routing\\Annotation\\Route"
+      "class": "Climb\\Routing\\Annotation\\Route"
     },
     "Security": {
-      "class": "Framework3\\Security\\Annotation\\Security"
+      "class": "Climb\\Security\\Annotation\\Security"
     },
     "Column": {
-      "class": "Framework3\\Orm\\Annotation\\Column"
+      "class": "Climb\\Orm\\Annotation\\Column"
     },
     "Table": {
-      "class": "Framework3\\Orm\\Annotation\\Table"
+      "class": "Climb\\Orm\\Annotation\\Table"
     },
     "Relation": {
-      "class": "Framework3\\Orm\\Annotation\\Relation"
+      "class": "Climb\\Orm\\Annotation\\Relation"
     }
   }
 }

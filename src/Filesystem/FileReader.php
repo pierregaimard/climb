@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework3\Filesystem;
+namespace Climb\Filesystem;
 
 class FileReader
 {

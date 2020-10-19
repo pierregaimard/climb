@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework3\Env;
+namespace Climb\Env;
 
-use Framework3\Exception\AppException;
+use Climb\Exception\AppException;
 
 class EnvParser
 {

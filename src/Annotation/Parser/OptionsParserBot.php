@@ -4,7 +4,7 @@
  * Represents the state of the cursor during parsing of annotation options
  */
 
-namespace Framework3\Annotation\Parser;
+namespace Climb\Annotation\Parser;
 
 class OptionsParserBot extends AbstractParserBot
 {

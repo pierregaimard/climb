@@ -1,9 +1,9 @@
 <?php
 
-namespace Framework3\Orm;
+namespace Climb\Orm;
 
-use Framework3\Config\ConfigBag;
-use Framework3\Exception\AppException;
+use Climb\Config\ConfigBag;
+use Climb\Exception\AppException;
 
 class DbConfigurationChecker
 {

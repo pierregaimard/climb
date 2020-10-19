@@ -1,9 +1,9 @@
 <?php
 
-namespace Framework3\Annotation\Parser;
+namespace Climb\Annotation\Parser;
 
-use Framework3\Config\ConfigBag;
-use Framework3\Exception\AppException;
+use Climb\Config\ConfigBag;
+use Climb\Exception\AppException;
 
 class OptionParserTools
 {
