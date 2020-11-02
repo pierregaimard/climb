@@ -66,7 +66,7 @@ class EntityMapping
     }
 
     /**
-     * @return Relation[]
+     * @return array
      */
     public function getRelationColumns(): array
     {
