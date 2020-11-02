@@ -29,7 +29,7 @@ class EntityMappingUtils
      */
     public function removePrimaryColumn(array &$columns): void
     {
-        $key = array_search($this->getDefaultPrimaryName(), $columns);
+        $key = array_search($this->getDefaultDbPrimaryName(), $columns);
         
         if ($key !== false) {
             unset($columns[$key]);
@@ -41,9 +41,19 @@ class EntityMappingUtils
      *
      * @throws AppException
      */
-    public function getDefaultPrimaryName(): string
+    public function getDefaultDbPrimaryName(): string
     {
-        return $this->config->get('GLOBALS', true)['DEFAULTS']['PRIMARY']['NAME'];
+        return $this->config->get('GLOBALS', true)['DEFAULTS']['PRIMARY']['DB_NAME'];
+    }
+
+    /**
+     * @return string
+     *
+     * @throws AppException
+     */
+    private function getDefaultEntityPrimaryName(): string
+    {
+        return $this->config->get('GLOBALS', true)['DEFAULTS']['PRIMARY']['ENTITY_NAME'];
     }
 
     /**
@@ -53,7 +63,7 @@ class EntityMappingUtils
      */
     public function getDefaultPrimaryGetterName(): string
     {
-        return 'get' . ucfirst(strtolower($this->getDefaultPrimaryName()));
+        return 'get' . ucfirst(strtolower($this->getDefaultEntityPrimaryName()));
     }
 
     /**
@@ -63,7 +73,7 @@ class EntityMappingUtils
      */
     public function getDefaultPrimarySetterName(): string
     {
-        return 'set' . ucfirst(strtolower($this->getDefaultPrimaryName()));
+        return 'set' . ucfirst(strtolower($this->getDefaultEntityPrimaryName()));
     }
 
     /**
@@ -95,7 +105,7 @@ class EntityMappingUtils
      */
     public function getAssociationForeignKey(string $table): string
     {
-        return $this->getDefaultPrimaryName() . '_' . $table;
+        return $this->getDefaultDbPrimaryName() . '_' . $table;
     }
 
     /**
@@ -108,7 +118,7 @@ class EntityMappingUtils
     public function getAttributeForeignKey(string $attribute): string
     {
         $array = str_split($attribute);
-        $key   = $this->getDefaultPrimaryName() . '_';
+        $key   = $this->getDefaultDbPrimaryName() . '_';
 
         foreach ($array as $char) {
             if (ctype_upper($char)) {
