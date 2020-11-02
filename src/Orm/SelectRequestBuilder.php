@@ -97,7 +97,7 @@ class SelectRequestBuilder extends RequestBuilder
      */
     private function getAssociationParameter(string $table, string $association): string
     {
-        $primary    = $this->getUtils()->getDefaultPrimaryName();
+        $primary    = $this->getUtils()->getDefaultDbPrimaryName();
         $foreignKey = $this->getUtils()->getAssociationForeignKey($table);
 
         return

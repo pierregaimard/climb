@@ -24,7 +24,7 @@ class EntityDataManager
     public function __construct(EntityMappingUtils $utils)
     {
         $this->utils   = $utils;
-        $this->primary = $this->utils->getDefaultPrimaryName();
+        $this->primary = $this->utils->getDefaultDbPrimaryName();
     }
 
     /**
@@ -124,21 +124,47 @@ class EntityDataManager
     }
 
     /**
-     * @param array $entities
+     * @param string        $entity
+     * @param EntityMapping $mapping
+     * @param array         $data
+     *
+     * @return object
+     */
+    public function getHydratedEntity(string $entity, EntityMapping $mapping, array $data): object
+    {
+        $entity = new $entity();
+        foreach ($mapping->getColumns() as $attribute => $column) {
+            $setter = $this->utils->getAttributeSetterName($attribute);
+            $entity->$setter($data[$column]);
+        }
+
+        foreach ($mapping->getRelationColumns() as $relationColumn) {
+            $entity->$relationColumn = $data[$relationColumn];
+        }
+
+        return $entity;
+    }
+
+    /**
+     * @param string        $entity
+     * @param EntityMapping $mapping
+     * @param array         $data
      *
      * @return array
      *
      * @throws AppException
      */
-    public function getEntityTab(array $entities): array
+    public function getHydratedEntities(string $entity, EntityMapping $mapping, array $data): array
     {
-        $data   = [];
-        $getter = $this->utils->getDefaultPrimaryGetterName();
-
-        foreach ($entities as $entity) {
-            $data[$entity->$getter()] = $entity;
+        $entities = [];
+        foreach ($data as $entityData) {
+            $entities[$entityData[$this->utils->getDefaultDbPrimaryName()]] = $this->getHydratedEntity(
+                $entity,
+                $mapping,
+                $entityData
+            );
         }
 
-        return $data;
+        return $entities;
     }
 }
