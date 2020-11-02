@@ -54,7 +54,7 @@ class EntityRepository
     {
         return $this->eSelectManager->find([
             SelectRequestManager::ARG_CLASS => $this->entity,
-            SelectRequestManager::ARG_SEARCH => [$this->utils->getDefaultPrimaryName() => $primary],
+            SelectRequestManager::ARG_SEARCH => [$this->utils->getDefaultDbPrimaryName() => $primary],
         ]);
     }
 
