@@ -50,6 +50,8 @@ class Scanner
                 $childSubDir  = ($subDir) ? $subDir . DIRECTORY_SEPARATOR . $item : $item;
                 $subClassList = $this->scan($baseDir, $childSubDir);
 
+                $classList = array_merge($classList, $subClassList);
+
                 continue;
             }
 
