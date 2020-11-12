@@ -52,8 +52,8 @@ class SelectRequestManager extends RequestManager
         $request     = (array_key_exists(self::ARG_REQUEST, $arg)) ?
             $arg[self::ARG_REQUEST] :
             $this->builder->getSelectRequest($mapping->getTableName(), $search, $options, $association);
-        $select      = $this->getPdo()->prepare($request);
 
+        $select = $this->getPdo()->prepare($request);
         $select->execute($search);
 
         return $select;
