@@ -16,7 +16,7 @@ class DeleteRequestBuilder extends RequestBuilder
     public function getDeleteRequest(string $table, array $search = null)
     {
         if ($search === null) {
-            $search = [$this->getUtils()->getDefaultPrimaryName() => null];
+            $search = [$this->getUtils()->getDefaultDbPrimaryName() => null];
         }
 
         return 'DELETE FROM ' . $table . $this->getSearchParameters($search, $table);

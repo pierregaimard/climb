@@ -2,6 +2,7 @@
 
 namespace Climb\Orm;
 
+use PDO;
 use Climb\Exception\AppException;
 use Climb\Orm\Annotation\Relation;
 
@@ -32,12 +33,13 @@ class SelectEntityRequestManager extends SelectRequestManager
         $mapping    = $this->getMappingManager()->getEntityMapping(($arg[self::ARG_CLASS]));
         $select     = $this->executeSelectRequest($arg, $mapping);
         $invertedBy = $this->getInvertedBy($arg);
-        $entity     = $select->fetchObject($arg[self::ARG_CLASS]);
+        $data       = $select->fetch(PDO::FETCH_ASSOC);
 
-        if (!is_object($entity)) {
+        if ($data === false) {
             return null;
         }
 
+        $entity = $this->getDataManager()->getHydratedEntity($arg[self::ARG_CLASS], $mapping, $data);
         $this->setRelations($mapping, $entity, $invertedBy);
 
         return $entity;
@@ -91,7 +93,7 @@ class SelectEntityRequestManager extends SelectRequestManager
         $entity->$setter(
             $this->find([
                 self::ARG_CLASS => $relation->getEntity(),
-                self::ARG_SEARCH => [$this->builder->getUtils()->getDefaultPrimaryName() => $entity->$key],
+                self::ARG_SEARCH => [$this->builder->getUtils()->getDefaultDbPrimaryName() => $entity->$key],
                 self::ARG_INVERTED_BY => $relation->getInvertedBy(),
             ])
         );

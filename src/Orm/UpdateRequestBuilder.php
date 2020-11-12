@@ -18,7 +18,7 @@ class UpdateRequestBuilder extends RequestBuilder
     public function getUpdateRequest(string $table, array $columns, array $search = null)
     {
         if ($search === null) {
-            $search = [$this->getUtils()->getDefaultPrimaryName() => null];
+            $search = [$this->getUtils()->getDefaultDbPrimaryName() => null];
         }
 
         return

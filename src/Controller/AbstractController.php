@@ -44,6 +44,14 @@ class AbstractController
     }
 
     /**
+     * @return Container
+     */
+    public function getContainer(): Container
+    {
+        return $this->container;
+    }
+
+    /**
      * @param Container $container
      */
     public function setContainer(Container $container): void
