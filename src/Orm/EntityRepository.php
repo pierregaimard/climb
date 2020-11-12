@@ -74,6 +74,21 @@ class EntityRepository
     }
 
     /**
+     * @param string $request
+     * @param array  $search
+     *
+     * @throws AppException
+     */
+    protected function findOneByRequest(string $request, array $search)
+    {
+        return $this->eSelectManager->find([
+            SelectRequestManager::ARG_CLASS => $this->entity,
+            SelectRequestManager::ARG_REQUEST => $request,
+            SelectRequestManager::ARG_SEARCH => $search,
+        ]);
+    }
+
+    /**
      * @param array|null $option
      *
      * @return array|null
@@ -99,6 +114,23 @@ class EntityRepository
     {
         return $this->cSelectManager->find([
             SelectRequestManager::ARG_CLASS => $this->entity,
+            SelectRequestManager::ARG_SEARCH => $search,
+        ]);
+    }
+
+    /**
+     * @param string $request
+     * @param array  $search
+     *
+     * @return array|null
+     *
+     * @throws AppException
+     */
+    protected function findByRequest(string $request, array $search)
+    {
+        return $this->cSelectManager->find([
+            SelectRequestManager::ARG_CLASS => $this->entity,
+            SelectRequestManager::ARG_REQUEST => $request,
             SelectRequestManager::ARG_SEARCH => $search,
         ]);
     }

@@ -13,6 +13,7 @@ class SelectRequestManager extends RequestManager
     public const ARG_CLASS       = 'CLASS';
     public const ARG_INVERTED_BY = 'INVERTED_BY';
     public const ARG_ASSOCIATION = 'ASSOCIATION';
+    public const ARG_REQUEST     = 'REQUEST';
 
     /**
      * @var SelectRequestBuilder
@@ -48,9 +49,11 @@ class SelectRequestManager extends RequestManager
         $options     = (array_key_exists(self::ARG_OPTIONS, $arg)) ? $arg[self::ARG_OPTIONS] : null;
         $search      = (array_key_exists(self::ARG_SEARCH, $arg)) ? $arg[self::ARG_SEARCH] : null;
         $association = (array_key_exists(self::ARG_ASSOCIATION, $arg)) ? $arg[self::ARG_ASSOCIATION] : null;
-        $request     = $this->builder->getSelectRequest($mapping->getTableName(), $search, $options, $association);
-        $select      = $this->getPdo()->prepare($request);
+        $request     = (array_key_exists(self::ARG_REQUEST, $arg)) ?
+            $arg[self::ARG_REQUEST] :
+            $this->builder->getSelectRequest($mapping->getTableName(), $search, $options, $association);
 
+        $select = $this->getPdo()->prepare($request);
         $select->execute($search);
 
         return $select;
