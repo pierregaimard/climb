@@ -118,14 +118,13 @@ class SelectCollectionRequestManager extends SelectRequestManager
     private function setCollectionRelation(array $entities, string $attribute, Relation $relation)
     {
         $setter      = $this->builder->getUtils()->getAttributeSetterName($attribute);
-        $relationKey = $this->builder->getUtils()->getAttributeForeignKey($attribute);
         $idGetter    = $this->builder->getUtils()->getDefaultPrimaryGetterName();
 
         foreach ($entities as $entity) {
             $entity->$setter(
                 $this->find([
                     self::ARG_CLASS => $relation->getEntity(),
-                    self::ARG_SEARCH => [$relationKey => $entity->$idGetter()],
+                    self::ARG_SEARCH => [$relation->getForeignKey() => $entity->$idGetter()],
                     self::ARG_INVERTED_BY => $relation->getInvertedBy()
                 ])
             );
