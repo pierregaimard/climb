@@ -24,6 +24,11 @@ class Relation implements AnnotationInterface
     /**
      * @var string|null
      */
+    private ?string $foreignKey;
+
+    /**
+     * @var string|null
+     */
     private ?string $invertedBy = null;
 
     /**
@@ -66,6 +71,22 @@ class Relation implements AnnotationInterface
     public function setEntity(string $entity): void
     {
         $this->entity = $entity;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getForeignKey(): ?string
+    {
+        return $this->foreignKey;
+    }
+
+    /**
+     * @param string $foreignKey
+     */
+    public function setForeignKey(string $foreignKey): void
+    {
+        $this->foreignKey = $foreignKey;
     }
 
     /**
