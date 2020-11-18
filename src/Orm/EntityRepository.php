@@ -99,22 +99,24 @@ class EntityRepository
     {
         return $this->cSelectManager->find([
             SelectRequestManager::ARG_CLASS => $this->entity,
-            SelectRequestManager::ARG_OPTIONS => $option
+            SelectRequestManager::ARG_OPTIONS => $option,
         ]);
     }
 
     /**
-     * @param array $search
+     * @param array      $search
+     * @param array|null $option
      *
      * @return array|null
      *
      * @throws AppException
      */
-    public function findBy(array $search): ?array
+    public function findBy(array $search, array $option = null): ?array
     {
         return $this->cSelectManager->find([
             SelectRequestManager::ARG_CLASS => $this->entity,
             SelectRequestManager::ARG_SEARCH => $search,
+            SelectRequestManager::ARG_OPTIONS => $option,
         ]);
     }
 
